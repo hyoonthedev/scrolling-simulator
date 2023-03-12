@@ -1,0 +1,41 @@
+.chaos {
+
+    &__main {
+        // display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__image, &__item {
+        width: 5rem;
+    }
+
+    &__item {
+        animation: item-float 3s linear infinite;
+
+    }
+
+    &__hidden {
+        width: 5rem;
+        visibility: hidden;
+    }
+
+    &__item-container {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0 2rem;
+    }
+
+    &__scroll-container {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 6rem;
+    }
+}
+
+@keyframes item-float {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(8px)}
+    100% {transform: translateY(0px);}
+}
