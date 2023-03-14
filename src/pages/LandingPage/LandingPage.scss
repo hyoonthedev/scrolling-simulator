@@ -1,9 +1,37 @@
+@use '../../styles/partials/variables' as *;
+
 .landing {
 
-    &__container {
+    &__title {
+        font-family: "PressStart";
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        opacity: 80%;
+    }
+    &__options {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: auto;
+        height: 15rem;
+        gap: 5rem;
     }
+
+    &__image {
+        width: 5rem;
+
+        &:hover {
+            animation: item-float 2s linear infinite;
+            cursor: pointer;
+        }
+    }
+}
+
+@keyframes item-float {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(8px)}
+    100% {transform: translateY(0px);}
 }
 

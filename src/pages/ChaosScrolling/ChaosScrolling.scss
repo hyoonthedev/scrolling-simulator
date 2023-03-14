@@ -1,0 +1,101 @@
+@use "../../styles/partials/variables" as *;
+
+.chaos {
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image, &__item {
+        width: 5rem;
+        min-width: 5rem;
+        height: 5rem;
+    }
+
+    &__item {
+        animation: item-float 3s linear infinite;
+        margin-top: 1rem;
+
+    }
+
+    &__hidden {
+        width: 5rem;
+        visibility: hidden;
+    }
+
+    &__stats {
+        text-transform: uppercase;
+        font-family: "PressStart";
+        font-size: 0.8rem;
+        text-align: center;
+        line-height: 1.5rem;
+        color: black;
+        opacity: 70%;
+    }
+
+    &__scroll-message {
+        font-family: "PressStart";
+        font-size: 0.8rem;
+        height: 1rem;
+        margin-top: 1rem;
+        color: $scroll-message;
+    }
+
+    &__text, &__reset {
+        font-family: "PressStart";
+        text-transform: uppercase;
+        font-size: 0.6rem;
+    }
+
+    &__reset {
+       background-color: $button;
+       padding: 0.5rem 1rem;
+       color: white;
+       font-size: 1rem;
+       margin-top: 2rem;
+       border-radius: 1rem;
+
+       &:hover {
+        background-color: teal;
+        cursor: pointer;
+       }
+    }
+
+// Containers
+    &__item-container {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 5rem;
+        margin: 1rem 0 2rem;
+    }
+
+    &__scroll-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 4rem;
+        gap: 5rem;
+    }
+
+    &__checkbox {
+        margin-top: 0.5rem;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    &__whitescroll-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@keyframes item-float {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(8px)}
+    100% {transform: translateY(0px);}
+}
