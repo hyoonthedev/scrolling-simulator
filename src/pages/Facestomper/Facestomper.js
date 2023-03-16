@@ -118,6 +118,7 @@ function ChaosScrolling({
         setResetCount(resetCount + 1)
     }
 
+// Handle Drag states
     const handleDragStart = (e) => {
         e.dataTransfer.effectAllowed = "copyMove";
     }
@@ -135,7 +136,7 @@ function ChaosScrolling({
     }
 
     return(
-        <div className="chaos__main">
+        <section className="chaos__main">
             <div className="chaos__item-container">
                 <img 
                 onDragOver={handleDragOver} 
@@ -173,7 +174,7 @@ function ChaosScrolling({
                 <div onClick={handleReset} className="chaos__button">Reset</div>
             </div>
             <img className={scrollStatus === true ? "chaos__animation" : "chaos__animation-hidden"} src={animation} alt="Scroll Fail Animation"/>
-            </div>
+        </section>
     )
 }
 

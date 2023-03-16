@@ -6,6 +6,7 @@ import spectrumGoggle from '../../assets/Images/spectrum-goggle.png';
 import elementPierce from '../../assets/Images/element-pierce.png';
 import bwg from '../../assets/Images/bwg.png';
 import faceStomper from '../../assets/Images/face-stomper.png';
+import markOfNaricain from '../../assets/Images/mark-of-naricain.png';
 
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -34,6 +35,7 @@ function LandingPage() {
                 <img onClick={() => handleClick("element pierce")} className="landing__image" src={elementPierce} alt="Element Pierece"/>
                 <img onClick={() => handleClick("brown work glove")} className="landing__image" src={bwg} alt="Brown Work Glove"/>
                 <img onClick={() => handleClick("facestomper")} className="landing__image" src={faceStomper} alt="Face Stomper"/>
+                <img onClick={() => handleClick("mark of naricain")} className="landing__image" src={markOfNaricain} alt="Mark of Naricain"/>
             </div>
             <h4 className="landing__selected">{selected}</h4>
             <div onClick={() => navigate(`/${selectedLink}`)} className={selected === null ? "landing__hidden" : "landing__start" }>Lets go!</div>
