@@ -10,13 +10,37 @@
         font-size: 1.5rem;
         opacity: 80%;
     }
+
+    &__selected {
+        @extend .landing__title;
+        color: teal;
+        height: 2rem;
+    }
+
+    &__start {
+        @extend .landing__title;
+        background-color: $button;
+        padding: 0.7rem 1rem;
+        width: 15rem;
+        margin: auto;
+        margin-top: 2rem;
+        border-radius: 1rem;
+
+        &:hover {
+            background-color: teal;
+            cursor: pointer;
+            color: white;
+           }
+    }
+
     &__options {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: auto;
-        height: 15rem;
+        height: 10rem;
         gap: 5rem;
+        margin-top: 5rem;
     }
 
     &__image {
@@ -26,6 +50,11 @@
             animation: item-float 2s linear infinite;
             cursor: pointer;
         }
+    }
+
+// Hidden if nothing is selected
+    &__hidden {
+        visibility: hidden;
     }
 }
 

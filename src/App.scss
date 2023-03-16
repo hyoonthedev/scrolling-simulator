@@ -11,13 +11,13 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh;
+    min-height: 110vh;
 }
 
 .main-container {
     background-color: white;
     width: 40rem;
-    height: 28rem;
+    height: 27rem;
     margin: auto;
     opacity: 80%;
     border-radius: 5rem;

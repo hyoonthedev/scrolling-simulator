@@ -1,0 +1,21 @@
+.stats {
+
+    &__main {
+        background-color: white;
+        opacity: 80%;
+        width: 40rem;
+        margin: auto;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 1rem 0.5rem;
+        border-radius: 3rem;
+    }
+
+    &__text {
+        font-family: "PressStart";
+        font-size: 0.7rem;
+        color: maroon;
+        text-transform: uppercase;
+    }
+}

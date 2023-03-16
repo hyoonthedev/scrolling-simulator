@@ -1,30 +1,51 @@
-import './ChaosScrolling.scss';
+import '../ChaosScrolling.scss';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Images
 import faceStompers from '../../assets/Images/face-stomper.png';
 import chaosScroll from '../../assets/Images/chaos-scroll.png';
 import whiteScroll from '../../assets/Images/white-scroll.png';
+import fail from '../../assets/Images/fail.gif';
 
-function ChaosScrolling() {
+function ChaosScrolling({ 
+    passRateCount,
+    setPassRateCount, 
+    totalScrollCount,
+    setTotalScrollCount, 
+    resetCount,
+    setResetCount,
+    getRndInteger,
+    successMessage,
+    failMessage,
+    failWhiteScrollMessage,
+    noSlotsMessage,
+    }) {
 
-// Randomizer
-    const getRndInteger = (min, max) => {
-        return Math.floor(Math.random() * (max - min) ) + min;
+    const navigate = useNavigate();
+
+// Renders success and fail animation
+    const failRender = () => {
+        setTimeout(() => setScrollStatus(false), 810);
+        setTimeout(() => setAnimation(null), 810);
+        clearTimeout(failRender);
     }
 
-// Random Stats on start``
-    const attackStat = getRndInteger(1, 4);
-    const defStat = getRndInteger(18, 23)
-    const mDefStat = getRndInteger(4, 7)
+// Facestomper random stats
+    const attackStat = getRndInteger(1, 3);
+    const defStat = getRndInteger(18, 22);
+    const mDefStat = getRndInteger(4, 6);
 
-// Item Stat States
+// Facestomper states
     const [weaponAttack, setWeaponAttack] = useState(attackStat);
     const [weaponDef, setWeaponDef] = useState(defStat);
     const [weaponMDef, setWeaponMDef] = useState(mDefStat);
     const [weaponSlots, setWeaponSlots] = useState(5);
     const [useWhiteScroll, setUseWhiteScroll] = useState(false);
+    const [scrollStatus, setScrollStatus] = useState(false);
     const [scrollMessage, setScrollMessage] = useState("Drag Scroll over item to start.");
+    const [animation, setAnimation] = useState();
+    const [dragStatus, setDragStatus] = useState(false);
 
 // Scrolling Logic
 
@@ -32,12 +53,6 @@ function ChaosScrolling() {
     const handleWhiteScroll = () => {
         setUseWhiteScroll(!useWhiteScroll)
     }
-
-// Scroll Success and Fail Messages
-    const successMessage = "The scroll lights up, and then its mysterious power has been transfered to the item."
-    const failMessage = "The scroll lights up, but the item winds up as if nothing happened."
-    const failWhiteScrollMessage = "The item upgrade failed, but since the White Scroll was used the number of item upgrade slots remain in tact."
-    const noSlotsMessage = "No more available slots!"
     
     const handleScroll = () => {
         const scrollChance = Math.floor(Math.random() * 11);
@@ -55,14 +70,24 @@ function ChaosScrolling() {
 // Main Scrolling
         if(scrollChance < 4) {
             if(useWhiteScroll === true) {
+                setScrollStatus(true);
+                setAnimation(fail)
+                failRender();
                 setScrollMessage(failWhiteScrollMessage)
+                setTotalScrollCount(totalScrollCount + 1)
             } else {
-                setWeaponSlots(weaponSlots -1)
+                setWeaponSlots(weaponSlots - 1)
                 setScrollMessage(failMessage)
+                setTotalScrollCount(totalScrollCount + 1)
+                setScrollStatus(true);
+                setAnimation(fail)
+                failRender();
             }
         } else {
+            setPassRateCount(passRateCount + 1)
             setScrollMessage(successMessage)
-            setWeaponSlots(weaponSlots -1)
+            setWeaponSlots(weaponSlots - 1)
+            setTotalScrollCount(totalScrollCount + 1)
             if(weaponAttack > 0) {
                 setWeaponAttack(weaponAttack + weaponAttackChance)
             } if(weaponDef > 0) {
@@ -89,32 +114,26 @@ function ChaosScrolling() {
         setWeaponDef(defStat);
         setWeaponMDef(mDefStat);
         setWeaponSlots(5)
-        setScrollMessage(null)
+        setScrollMessage("Drag Scroll over item to start.")
+        setResetCount(resetCount + 1)
     }
 
-    const [dragStart, setDragStart] = useState("start drag nope");
-    const [dragEnd, setDragEnd] = useState("end drag nope");
-    const [dragging, setDragging] = useState("dragging nope");
-    const [dragOver, setDragOver] = useState("not over")
-    const [dropped, setDropped] = useState("i dont feel it")
+    const handleDragStart = (e) => {
+        e.dataTransfer.effectAllowed = "copyMove";
+    }
+    const handleDragEnd = () => {
+        setDragStatus(false)
+    }
+    const handleDragging = () => {
+        setDragStatus(true)
+    }
+    const handleDragOver = (e) => {
+        e.preventDefault();
+    }
+    const handleDropped = () => {
+        handleScroll()
+    }
 
-let handleDragStart = (e) => {
-    setDragStart("drag started")
-    e.dataTransfer.effectAllowed = "copyMove";
-    // e.dataTransfer.effectAllowed = 'none';
-}
-let handleDragEnd = () => {
-    setDragEnd("drag Ended")
-}
-let handleDragging = () => {
-    setDragging("dragging")
-}
-let handleDragOver = (event) => {
-    event.preventDefault();
-}
-let handleDropped = () => {
-    handleScroll();
-}
     return(
         <div className="chaos__main">
             <div className="chaos__item-container">
@@ -147,12 +166,14 @@ let handleDropped = () => {
                     onDragStart={handleDragStart}
                     onDragEnd={handleDragEnd}
                     onDrag={handleDragging}
-                    className="chaos__image" src={chaosScroll} alt="Chaos Scroll"/>
+                    className={dragStatus === true ? "chaos__hidden" : "chaos__image"} src={chaosScroll} alt="Chaos Scroll"/>
             </div>
-            <div
-            onClick={handleReset}
-            className="chaos__reset">Reset</div>
-        </div>
+            <div className="chaos__button-container">
+                <div onClick={() => navigate('/')} className="chaos__button">Back</div>
+                <div onClick={handleReset} className="chaos__button">Reset</div>
+            </div>
+            <img className={scrollStatus === true ? "chaos__animation" : "chaos__animation-hidden"} src={animation} alt="Scroll Fail Animation"/>
+            </div>
     )
 }
 

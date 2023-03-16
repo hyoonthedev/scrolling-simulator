@@ -8,23 +8,36 @@ import bwg from '../../assets/Images/bwg.png';
 import faceStomper from '../../assets/Images/face-stomper.png';
 
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 function LandingPage() {
 
     const navigate = useNavigate();
 
+    const [selected, setSelected] = useState(null)
+    const [selectedLink, setSelectedLink] = useState(null)
+
+    const convertLink = (item) => {
+        return(item.split(' ').join('-'))
+    }
+    const handleClick = (event) => {
+        setSelected(event)
+        setSelectedLink(convertLink(event))
+    }
+
     return(
         <section className="landing">
             <h4 className="landing__title">Select Item to Scroll!</h4>
             <div className="landing__options">
-                <img onClick={() => navigate('/')} className="landing__image" src={gaiaCape} alt="Pink Gaia Cape"/>
-                <img onClick={() => navigate('/')} className="landing__image" src={spectrumGoggle} alt="Spectrum Goggle"/>
-                <img onClick={() => navigate('/')} className="landing__image" src={elementPierce} alt="Element Pierece"/>
-                <img onClick={() => navigate('/')} className="landing__image" src={bwg} alt="Brown Work Glove"/>
-                <img onClick={() => navigate('/')} className="landing__image" src={faceStomper} alt="Face Stomper"/>
+                <img onClick={() => handleClick("pink gaia cape")} className="landing__image" src={gaiaCape} alt="Pink Gaia Cape"/>
+                <img onClick={() => handleClick("spectrum goggle")} className="landing__image" src={spectrumGoggle} alt="Spectrum Goggle"/>
+                <img onClick={() => handleClick("element pierce")} className="landing__image" src={elementPierce} alt="Element Pierece"/>
+                <img onClick={() => handleClick("brown work glove")} className="landing__image" src={bwg} alt="Brown Work Glove"/>
+                <img onClick={() => handleClick("facestomper")} className="landing__image" src={faceStomper} alt="Face Stomper"/>
             </div>
+            <h4 className="landing__selected">{selected}</h4>
+            <div onClick={() => navigate(`/${selectedLink}`)} className={selected === null ? "landing__hidden" : "landing__start" }>Lets go!</div>
         </section>
-        
     )
 }
 
