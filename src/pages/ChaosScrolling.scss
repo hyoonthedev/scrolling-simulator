@@ -26,6 +26,12 @@
         left: -9rem;
         top: -30rem;
     }
+// Unique positioning for Element Pierce
+    &__animation-pierce {
+        position: relative;
+        left: -9rem;
+        top: -35rem;
+    }
 
     &__animation-hidden {
         display: none;

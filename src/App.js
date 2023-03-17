@@ -6,6 +6,7 @@ import { useState } from 'react';
 import LandingPage from './pages/LandingPage/LandingPage';
 import Facestomper from './pages/Facestomper/Facestomper';
 import PinkGaiaCape from './pages/PinkGaiaCape/PinkGaiaCape';
+import ElementPierce from './pages/ElementPierce/ElementPierce';
 
 // Components
 import MainTitle from './components/MainTitle/MainTitle';
@@ -72,6 +73,24 @@ const noSlotsMessage = "No more available slots!"
                 failWhiteScrollMessage = {failWhiteScrollMessage}
                 noSlotsMessage = {noSlotsMessage}
                 />}
+            />
+            <Route
+              path="/element-pierce"
+              element={<ElementPierce
+                passRateCount = {passRateCount}
+                setPassRateCount = {setPassRateCount}
+                failRateCount = {failRateCount}
+                setFailRateCount = {setFailRateCount}
+                totalScrollCount = {totalScrollCount}
+                setTotalScrollCount = {setTotalScrollCount}
+                resetCount = {resetCount}
+                setResetCount = {setResetCount}
+                getRndInteger = {getRndInteger}
+                successMessage = {successMessage}
+                failMessage = {failMessage}
+                failWhiteScrollMessage = {failWhiteScrollMessage}
+                noSlotsMessage = {noSlotsMessage}
+              />}
             />
           </Routes>
         </div>
