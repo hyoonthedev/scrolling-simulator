@@ -32,6 +32,12 @@
         left: -9rem;
         top: -35rem;
     }
+// Unique positioning for Spectrum Goggle
+    &__animation-spectrum {
+        position: relative;
+        left: -11.5rem;
+        top: -30.5rem;
+    }
 
     &__animation-hidden {
         display: none;

@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Images
-import elementPierce from '../../assets/Images/element-pierce.png';
+import spectrumGoggle from '../../assets/Images/spectrum-goggle.png';
 import chaosScroll from '../../assets/Images/chaos-scroll.png';
 import whiteScroll from '../../assets/Images/white-scroll.png';
 import fail from '../../assets/Images/fail.gif';
 
-function ElementPierce({ 
+function SpectrumGoggle({
     passRateCount,
     setPassRateCount, 
     totalScrollCount,
@@ -34,19 +34,14 @@ function ElementPierce({
 // Element Pierce random stats
     const strStat = getRndInteger(0, 2);
     const dexStat = getRndInteger(0, 2);
+    const speedStat = getRndInteger(0, 2);
     const intStat = getRndInteger(0, 2);
-    const lukStat = getRndInteger(0, 2);
-    const magicAttack = getRndInteger (1, 3);
-    const mDefStat = getRndInteger(90, 110);
         
 // Element Pierce states
     const [itemStr, setItemStr] = useState(strStat);
     const [itemDex, setItemDex] = useState(dexStat);
-    const [itemInt, setItemInt] = useState(intStat);
-    const [itemLuk, setItemLuk] = useState(lukStat);
-    const [itemMagicAttack, setItemMagicAttack] = useState(magicAttack);
-    const [itemMDef, setItemMDef] = useState(mDefStat);
-    const [weaponSlots, setWeaponSlots] = useState(7);
+    const [itemSpeed, setItemSpeed] = useState(speedStat);
+    const [weaponSlots, setWeaponSlots] = useState(3);
     const [useWhiteScroll, setUseWhiteScroll] = useState(false);
     const [scrollStatus, setScrollStatus] = useState(false);
     const [scrollMessage, setScrollMessage] = useState("Drag Scroll over item to start.");
@@ -64,10 +59,7 @@ function ElementPierce({
         const scrollChance = Math.floor(Math.random() * 11);
         const strChance = getRndInteger(-5, 5);
         const dexChance = getRndInteger(-5, 5);
-        const intChance = getRndInteger(-5, 5);
-        const lukChance = getRndInteger(-5, 5);
-        const magicAttackChance = getRndInteger(-5, 5);
-        const magicDefenceChance = getRndInteger(-5, 5);
+        const speedChance = getRndInteger(-5, 5);
         
 // If no slots, dont scroll at all
         if(weaponSlots === 0) {
@@ -101,14 +93,8 @@ function ElementPierce({
                 setItemStr(itemStr + strChance)
             } if(itemDex > 0) {
                 setItemDex(itemDex + dexChance)
-            } if(itemInt > 0) {
-                setItemInt(itemInt + intChance)
-            } if(itemLuk > 0) {
-                setItemLuk(itemLuk + lukChance)
-            } if(itemMagicAttack > 0) {
-                setItemMagicAttack(itemMagicAttack + magicAttackChance)
-            } if(itemMDef > 0) {
-                setItemMDef(itemMDef + magicDefenceChance)
+            } if(itemSpeed > 0) {
+                setItemSpeed(itemSpeed + speedChance)
             }
         }
     }
@@ -118,23 +104,16 @@ function ElementPierce({
         setItemStr(0)
     } if(itemDex < 0) {
         setItemDex(0)
-    } if(itemInt < 0) {
-        setItemInt(0)
-    } if(itemLuk < 0) {
-        setItemLuk(0)
-    } if(itemMagicAttack < 0) {
-        setItemMagicAttack(0)
-    } if(itemMDef < 0) {
-        setItemMDef(0)
+    } if(itemSpeed < 0) {
+        setItemSpeed(0)
     }
         
 // Handle Reset Button
     const handleReset = () => {
         setItemStr(strStat);
         setItemDex(dexStat);
-        setItemInt(intStat);
-        setItemLuk(lukStat);
-        setWeaponSlots(7)
+        setItemSpeed(speedStat)
+        setWeaponSlots(3)
         setScrollMessage("Drag Scroll over item to start.")
         setResetCount(resetCount + 1)
     }
@@ -162,15 +141,12 @@ function ElementPierce({
             <img 
                 onDragOver={handleDragOver} 
                 onDrop={handleDropped}
-                className="chaos__item" src={elementPierce} alt="Element Pierce"/>
+                className="chaos__item" src={spectrumGoggle} alt="Spectrum Goggle"/>
                 <article className="chaos__stats-container">
-                    <div className="chaos__stats">Category: Earring</div>
+                    <div className="chaos__stats">Category: Eye Accessory</div>
                     <div className="chaos__stats">STR: {itemStr}</div>
                     <div className="chaos__stats">DEX: {itemDex}</div>
-                    <div className="chaos__stats">INT: {itemInt}</div>
-                    <div className="chaos__stats">LUK: {itemLuk}</div>
-                    <div className="chaos__stats">Magic Attack: {itemMagicAttack}</div>
-                    <div className="chaos__stats">Magic Def: {itemMDef}</div>
+                    <div className="chaos__stats">Speed: {itemSpeed}</div>
                     <div className="chaos__stats">Slots: {weaponSlots}</div>
                 </article>
             </div>
@@ -197,9 +173,9 @@ function ElementPierce({
                 <div onClick={() => navigate('/')} className="chaos__button">Back</div>
                 <div onClick={handleReset} className="chaos__button">Reset</div>
             </div>
-            <img className={scrollStatus === true ? "chaos__animation-pierce" : "chaos__animation-hidden"} src={animation} alt="Scroll Fail Animation"/>
+            <img className={scrollStatus === true ? "chaos__animation-spectrum" : "chaos__animation-hidden"} src={animation} alt="Scroll Fail Animation"/>
         </section>
     )
 }
 
-export default ElementPierce;
+export default SpectrumGoggle;

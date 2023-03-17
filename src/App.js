@@ -7,6 +7,8 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import Facestomper from './pages/Facestomper/Facestomper';
 import PinkGaiaCape from './pages/PinkGaiaCape/PinkGaiaCape';
 import ElementPierce from './pages/ElementPierce/ElementPierce';
+import SpectrumGoggle from './pages/SpectrumGoggle/SpectrumGoggle';
+import MarkOfNaricain from './pages/MarkOfNaricain/MarkOfNaricain';
 
 // Components
 import MainTitle from './components/MainTitle/MainTitle';
@@ -92,6 +94,42 @@ const noSlotsMessage = "No more available slots!"
                 noSlotsMessage = {noSlotsMessage}
               />}
             />
+            <Route
+              path="/spectrum-goggle"
+              element={<SpectrumGoggle
+                passRateCount = {passRateCount}
+                setPassRateCount = {setPassRateCount}
+                failRateCount = {failRateCount}
+                setFailRateCount = {setFailRateCount}
+                totalScrollCount = {totalScrollCount}
+                setTotalScrollCount = {setTotalScrollCount}
+                resetCount = {resetCount}
+                setResetCount = {setResetCount}
+                getRndInteger = {getRndInteger}
+                successMessage = {successMessage}
+                failMessage = {failMessage}
+                failWhiteScrollMessage = {failWhiteScrollMessage}
+                noSlotsMessage = {noSlotsMessage}
+              />}
+            />
+              <Route
+                path="/mark-of-naricain"
+                element={<MarkOfNaricain
+                  passRateCount = {passRateCount}
+                  setPassRateCount = {setPassRateCount}
+                  failRateCount = {failRateCount}
+                  setFailRateCount = {setFailRateCount}
+                  totalScrollCount = {totalScrollCount}
+                  setTotalScrollCount = {setTotalScrollCount}
+                  resetCount = {resetCount}
+                  setResetCount = {setResetCount}
+                  getRndInteger = {getRndInteger}
+                  successMessage = {successMessage}
+                  failMessage = {failMessage}
+                  failWhiteScrollMessage = {failWhiteScrollMessage}
+                  noSlotsMessage = {noSlotsMessage}
+                />}
+              />
           </Routes>
         </div>
         <ScrollStats

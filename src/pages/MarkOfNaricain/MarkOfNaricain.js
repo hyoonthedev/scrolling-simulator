@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Images
-import elementPierce from '../../assets/Images/element-pierce.png';
+import markOfNaricain from '../../assets/Images/mark-of-naricain.png';
 import chaosScroll from '../../assets/Images/chaos-scroll.png';
 import whiteScroll from '../../assets/Images/white-scroll.png';
 import fail from '../../assets/Images/fail.gif';
 
-function ElementPierce({ 
+function MarkOfNaricain({
     passRateCount,
     setPassRateCount, 
     totalScrollCount,
@@ -21,7 +21,7 @@ function ElementPierce({
     failWhiteScrollMessage,
     noSlotsMessage,
 }) {
-
+    
     const navigate = useNavigate();
 
 // Renders success and fail animation
@@ -32,21 +32,31 @@ function ElementPierce({
     }
         
 // Element Pierce random stats
-    const strStat = getRndInteger(0, 2);
-    const dexStat = getRndInteger(0, 2);
-    const intStat = getRndInteger(0, 2);
-    const lukStat = getRndInteger(0, 2);
-    const magicAttack = getRndInteger (1, 3);
-    const mDefStat = getRndInteger(90, 110);
+    const strStat = getRndInteger(4, 6);
+    const dexStat = getRndInteger(4, 6);
+    const intStat = getRndInteger(4, 6);
+    const lukStat = getRndInteger(4, 6);
+    const hpStat = getRndInteger(290, 310);
+    const mpStat = getRndInteger(290, 310);
+    const weaponAttack = getRndInteger(3, 5);
+    const magicAttack = getRndInteger (9, 12);
+    const accuracyStat = getRndInteger(13, 17);
+    const speedStat = getRndInteger(4, 6);
+    const jumpStat = getRndInteger(4, 6);
         
 // Element Pierce states
     const [itemStr, setItemStr] = useState(strStat);
     const [itemDex, setItemDex] = useState(dexStat);
     const [itemInt, setItemInt] = useState(intStat);
     const [itemLuk, setItemLuk] = useState(lukStat);
+    const [itemHp, setItemHp] = useState(hpStat);
+    const [itemMp, setItemMp] = useState(mpStat);
+    const [itemWeaponAttack, setItemWeaponAttack] = useState(weaponAttack);
     const [itemMagicAttack, setItemMagicAttack] = useState(magicAttack);
-    const [itemMDef, setItemMDef] = useState(mDefStat);
-    const [weaponSlots, setWeaponSlots] = useState(7);
+    const [itemAccuracy, setItemAccuracy] = useState(accuracyStat);
+    const [itemSpeed, setItemSpeed] = useState(speedStat);
+    const [itemJump, setItemJump] = useState(jumpStat);
+    const [weaponSlots, setWeaponSlots] = useState(1);
     const [useWhiteScroll, setUseWhiteScroll] = useState(false);
     const [scrollStatus, setScrollStatus] = useState(false);
     const [scrollMessage, setScrollMessage] = useState("Drag Scroll over item to start.");
@@ -66,8 +76,13 @@ function ElementPierce({
         const dexChance = getRndInteger(-5, 5);
         const intChance = getRndInteger(-5, 5);
         const lukChance = getRndInteger(-5, 5);
+        const hpChance = getRndInteger(-5, 5);
+        const mpChance = getRndInteger(-5, 5);
+        const weaponAttackChance = getRndInteger(-5, 5);
         const magicAttackChance = getRndInteger(-5, 5);
-        const magicDefenceChance = getRndInteger(-5, 5);
+        const accuracyChance = getRndInteger(-5, 5);
+        const speedChance = getRndInteger(-5, 5);
+        const jumpChance = getRndInteger(-5, 5);
         
 // If no slots, dont scroll at all
         if(weaponSlots === 0) {
@@ -105,10 +120,20 @@ function ElementPierce({
                 setItemInt(itemInt + intChance)
             } if(itemLuk > 0) {
                 setItemLuk(itemLuk + lukChance)
+            } if(itemHp > 0) {
+                setItemHp(itemHp + hpChance)
+            } if(itemMp > 0) {
+                setItemMp(itemMp + mpChance)
+            } if(itemWeaponAttack > 0) {
+                setItemWeaponAttack(itemWeaponAttack + weaponAttackChance)
             } if(itemMagicAttack > 0) {
                 setItemMagicAttack(itemMagicAttack + magicAttackChance)
-            } if(itemMDef > 0) {
-                setItemMDef(itemMDef + magicDefenceChance)
+            } if(itemAccuracy > 0) {
+                setItemAccuracy(itemAccuracy + accuracyChance)
+            } if(itemSpeed > 0) {
+                setItemSpeed(itemSpeed + speedChance)
+            } if(itemJump > 0) {
+                setItemJump(itemJump + jumpChance)
             }
         }
     }
@@ -122,10 +147,20 @@ function ElementPierce({
         setItemInt(0)
     } if(itemLuk < 0) {
         setItemLuk(0)
+    } if(itemHp < 0) {
+        setItemHp(0)
+    } if(itemMp < 0) {
+        setItemMp(0)
+    } if(itemWeaponAttack < 0) {
+        setItemWeaponAttack(0)
     } if(itemMagicAttack < 0) {
         setItemMagicAttack(0)
-    } if(itemMDef < 0) {
-        setItemMDef(0)
+    } if(itemAccuracy < 0) {
+        setItemAccuracy(0)
+    } if(itemSpeed < 0) {
+        setItemSpeed(0)
+    } if(itemJump < 0) {
+        setItemJump(0)
     }
         
 // Handle Reset Button
@@ -134,7 +169,14 @@ function ElementPierce({
         setItemDex(dexStat);
         setItemInt(intStat);
         setItemLuk(lukStat);
-        setWeaponSlots(7)
+        setItemHp(hpStat);
+        setItemMp(mpStat);
+        setItemWeaponAttack(weaponAttack);
+        setItemMagicAttack(magicAttack);
+        setItemAccuracy(accuracyStat);
+        setItemSpeed(speedStat);
+        setItemJump(jumpStat);
+        setWeaponSlots(1)
         setScrollMessage("Drag Scroll over item to start.")
         setResetCount(resetCount + 1)
     }
@@ -162,15 +204,20 @@ function ElementPierce({
             <img 
                 onDragOver={handleDragOver} 
                 onDrop={handleDropped}
-                className="chaos__item" src={elementPierce} alt="Element Pierce"/>
+                className="chaos__item" src={markOfNaricain} alt="Mark Of Naricain"/>
                 <article className="chaos__stats-container">
                     <div className="chaos__stats">Category: Earring</div>
                     <div className="chaos__stats">STR: {itemStr}</div>
                     <div className="chaos__stats">DEX: {itemDex}</div>
                     <div className="chaos__stats">INT: {itemInt}</div>
                     <div className="chaos__stats">LUK: {itemLuk}</div>
+                    <div className="chaos__stats">HP: {itemHp}</div>
+                    <div className="chaos__stats">MP: {itemMp}</div>
+                    <div className="chaos__stats">Weapon Attack: {itemWeaponAttack}</div>
                     <div className="chaos__stats">Magic Attack: {itemMagicAttack}</div>
-                    <div className="chaos__stats">Magic Def: {itemMDef}</div>
+                    <div className="chaos__stats">Accuracy: {itemAccuracy}</div>
+                    <div className="chaos__stats">Speed: {itemSpeed}</div>
+                    <div className="chaos__stats">Jump: {itemJump}</div>
                     <div className="chaos__stats">Slots: {weaponSlots}</div>
                 </article>
             </div>
@@ -202,4 +249,4 @@ function ElementPierce({
     )
 }
 
-export default ElementPierce;
+export default MarkOfNaricain;

@@ -20,7 +20,7 @@ function ChaosScrolling({
     failMessage,
     failWhiteScrollMessage,
     noSlotsMessage,
-    }) {
+}) {
 
     const navigate = useNavigate();
 
