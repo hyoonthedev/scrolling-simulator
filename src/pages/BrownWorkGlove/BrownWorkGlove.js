@@ -92,8 +92,6 @@ function BrownWorkGlove({
     const handleDarkScroll = () => {
         const scrollChance = Math.floor(Math.random() * 11);
         const destroyChance = Math.floor(Math.random() * 11);
-        console.log(scrollChance)
-        console.log(destroyChance)
 
 // If no slots, can't scroll
         if(weaponSlots === 0) {
@@ -181,7 +179,7 @@ function BrownWorkGlove({
             <div className={itemDestroyed === true ? "chaos__item-placeholder" : "chaos__item-hidden"}></div>
                 <article className={itemDestroyed === false ? "chaos__stats-container" : "chaos__stats-container-hidden"}>
                     <div className="chaos__stats">Category: Gloves</div>
-                    <div className="chaos__stats">Weapon Attack: {itemWeaponAttack}</div>
+                    <div className={itemWeaponAttack === 0 ? "chaos__stats-hidden" : "chaos__stats"}>Weapon Attack: {itemWeaponAttack}</div>
                     <div className="chaos__stats">Slots: {weaponSlots}</div>
                 </article>
             </div>

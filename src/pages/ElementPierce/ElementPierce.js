@@ -134,6 +134,8 @@ function ElementPierce({
         setItemDex(dexStat);
         setItemInt(intStat);
         setItemLuk(lukStat);
+        setItemMagicAttack(magicAttack)
+        setItemMDef(mDefStat)
         setWeaponSlots(7)
         setScrollMessage("Drag Scroll over item to start.")
         setResetCount(resetCount + 1)

@@ -54,6 +54,10 @@
         opacity: 70%;
     }
 
+    &__stats-hidden {
+        display: none;
+    }
+
     &__scroll-message {
         font-family: "PressStart";
         font-size: 0.8rem;
