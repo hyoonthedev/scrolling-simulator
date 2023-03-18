@@ -21,7 +21,7 @@ function MarkOfNaricain({
     failWhiteScrollMessage,
     noSlotsMessage,
 }) {
-    
+
     const navigate = useNavigate();
 
 // Renders success and fail animation
@@ -39,7 +39,7 @@ function MarkOfNaricain({
     const hpStat = getRndInteger(290, 310);
     const mpStat = getRndInteger(290, 310);
     const weaponAttack = getRndInteger(3, 5);
-    const magicAttack = getRndInteger (9, 12);
+    const magicAttack = getRndInteger (9, 11);
     const accuracyStat = getRndInteger(13, 17);
     const speedStat = getRndInteger(4, 6);
     const jumpStat = getRndInteger(4, 6);
@@ -92,7 +92,7 @@ function MarkOfNaricain({
         }
         
 // Main Scrolling
-        if(scrollChance < 4) {
+        if(scrollChance < 5) {
             if(useWhiteScroll === true) {
                 setScrollStatus(true);
                 setAnimation(fail)
@@ -221,8 +221,8 @@ function MarkOfNaricain({
                     <div className="chaos__stats">Slots: {weaponSlots}</div>
                 </article>
             </div>
-            <div className="chaos__scroll-message">{scrollMessage}</div>
-            <div className="chaos__scroll-container">
+            <div className="chaos__scroll-message-mon">{scrollMessage}</div>
+            <div className="chaos__scroll-container-mon">
                 <div className="chaos__whitescroll-container">
                     <img className="chaos__image" src={whiteScroll} alt="White Scroll"/>
                     <div className="chaos__checkbox">
@@ -244,7 +244,7 @@ function MarkOfNaricain({
                 <div onClick={() => navigate('/')} className="chaos__button">Back</div>
                 <div onClick={handleReset} className="chaos__button">Reset</div>
             </div>
-            <img className={scrollStatus === true ? "chaos__animation-pierce" : "chaos__animation-hidden"} src={animation} alt="Scroll Fail Animation"/>
+            <img className={scrollStatus === true ? "chaos__animation-mon" : "chaos__animation-hidden"} src={animation} alt="Scroll Fail Animation"/>
         </section>
     )
 }

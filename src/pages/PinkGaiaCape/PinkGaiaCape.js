@@ -68,7 +68,7 @@ function PinkGaiaCape({
     }
 
 // Main Scrolling
-    if(scrollChance < 4) {
+    if(scrollChance < 5) {
         if(useWhiteScroll === true) {
             setScrollStatus(true);
             setAnimation(fail)

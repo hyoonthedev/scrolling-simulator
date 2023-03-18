@@ -18,25 +18,21 @@
     &__item {
         animation: item-float 3s linear infinite;
         margin-top: 1rem;
+    }
 
+    &__item-hidden {
+        display: none;
+    }
+
+    &__item-placeholder {
+        width: 5rem;
+        height: 6rem;
     }
 
     &__animation {
         position: relative;
         left: -9rem;
-        top: -30rem;
-    }
-// Unique positioning for Element Pierce
-    &__animation-pierce {
-        position: relative;
-        left: -9rem;
-        top: -35rem;
-    }
-// Unique positioning for Spectrum Goggle
-    &__animation-spectrum {
-        position: relative;
-        left: -11.5rem;
-        top: -30.5rem;
+        top: -38rem;
     }
 
     &__animation-hidden {
@@ -62,7 +58,7 @@
         font-family: "PressStart";
         font-size: 0.8rem;
         height: 1rem;
-        margin-top: 1rem;
+        margin-top: 4rem;
         color: $scroll-message;
     }
 
@@ -85,6 +81,50 @@
         cursor: pointer;
        }
     }
+    
+// Unique positioning
+// Element Pierce
+    &__animation-pierce {
+        position: relative;
+        left: -9rem;
+        top: -43rem;
+    }
+
+// Spectrum Goggle
+    &__animation-spectrum {
+        position: relative;
+        left: -11.5rem;
+        top: -39.5rem;
+    }
+
+// Mark of Naricain
+    &__scroll-message-mon {
+        font-family: "PressStart";
+        font-size: 0.8rem;
+        height: 1rem;
+        margin-top: 1rem;
+        color: $scroll-message;
+    }
+
+    &__scroll-container-mon {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        gap: 5rem;
+    }
+
+    &__animation-mon {
+        position: relative;
+        left: -9.4rem;
+        top: -43rem;
+    }
+
+// Brown Work Glove
+    &__animation-bwg {
+        position: relative;
+        left: -9rem;
+        top: -37.8rem;
+    }
 
 // Containers
     &__item-container {
@@ -98,7 +138,7 @@
     &__scroll-container {
         display: flex;
         justify-content: center;
-        margin-top: 4rem;
+        margin-top: 7rem;
         gap: 5rem;
     }
 
@@ -117,10 +157,15 @@
 
     &__button-container {
         display: flex;
+        margin-top: 2rem;
         margin-bottom: 2rem;
         justify-content: center;
         align-items: center;
         gap: 5rem;
+    }
+
+    &__stats-container-hidden {
+        visibility: hidden;
     }
 }
 

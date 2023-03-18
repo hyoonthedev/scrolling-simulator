@@ -9,6 +9,7 @@ import PinkGaiaCape from './pages/PinkGaiaCape/PinkGaiaCape';
 import ElementPierce from './pages/ElementPierce/ElementPierce';
 import SpectrumGoggle from './pages/SpectrumGoggle/SpectrumGoggle';
 import MarkOfNaricain from './pages/MarkOfNaricain/MarkOfNaricain';
+import BrownWorkGlove from './pages/BrownWorkGlove/BrownWorkGlove';
 
 // Components
 import MainTitle from './components/MainTitle/MainTitle';
@@ -28,10 +29,11 @@ const getRndInteger = (min, max) => {
 }
 
 // Scroll Success and Fail Messages
-const successMessage = "The scroll lights up, and then its mysterious power has been transfered to the item."
-const failMessage = "The scroll lights up, but the item winds up as if nothing happened."
-const failWhiteScrollMessage = "The item upgrade failed, but since the White Scroll was used the number of item upgrade slots remain in tact."
-const noSlotsMessage = "No more available slots!"
+const successMessage = "The scroll lights up, and then its mysterious power has been transfered to the item.";
+const failMessage = "The scroll lights up, but the item winds up as if nothing happened.";
+const failWhiteScrollMessage = "The item upgrade failed, but since the White Scroll was used the number of item upgrade slots remain in tact.";
+const destroyItemMessage = "The item is destroyed due to the overwhelming power of the scroll.";
+const noSlotsMessage = "No more available slots!";
 
   return (
     <>
@@ -128,6 +130,25 @@ const noSlotsMessage = "No more available slots!"
                   failMessage = {failMessage}
                   failWhiteScrollMessage = {failWhiteScrollMessage}
                   noSlotsMessage = {noSlotsMessage}
+                />}
+              />
+              <Route
+                path="/brown-work-glove"
+                element={<BrownWorkGlove
+                  passRateCount = {passRateCount}
+                  setPassRateCount = {setPassRateCount}
+                  failRateCount = {failRateCount}
+                  setFailRateCount = {setFailRateCount}
+                  totalScrollCount = {totalScrollCount}
+                  setTotalScrollCount = {setTotalScrollCount}
+                  resetCount = {resetCount}
+                  setResetCount = {setResetCount}
+                  getRndInteger = {getRndInteger}
+                  successMessage = {successMessage}
+                  failMessage = {failMessage}
+                  failWhiteScrollMessage = {failWhiteScrollMessage}
+                  noSlotsMessage = {noSlotsMessage}
+                  destroyItemMessage = {destroyItemMessage}
                 />}
               />
           </Routes>

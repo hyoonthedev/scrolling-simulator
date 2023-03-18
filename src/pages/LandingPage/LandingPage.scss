@@ -6,7 +6,7 @@
         font-family: "PressStart";
         text-transform: uppercase;
         text-align: center;
-        margin-top: 2rem;
+        margin-top: 3rem;
         font-size: 1.5rem;
         opacity: 80%;
     }
@@ -15,6 +15,7 @@
         @extend .landing__title;
         color: teal;
         height: 2rem;
+        margin-top: 5rem;
     }
 
     &__start {
@@ -23,7 +24,7 @@
         padding: 0.7rem 1rem;
         width: 15rem;
         margin: auto;
-        margin-top: 2rem;
+        margin-top: 5rem;
         border-radius: 1rem;
 
         &:hover {
