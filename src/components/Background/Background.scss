@@ -1,0 +1,17 @@
+@use '../../styles/partials/mixins' as *;
+
+.background {
+    position: fixed;
+    min-height: 115vh;
+    top: -0.8rem;
+    height: 100%;
+    z-index: -1;
+
+    @include tablet {
+        position: fixed;
+        // width: 100%;
+        min-height: 105vh;
+        top: -1rem;
+        z-index: -1;
+    }
+}

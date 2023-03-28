@@ -45,8 +45,6 @@
     }
 
     &__stats {
-        text-transform: uppercase;
-        font-family: "PressStart";
         font-size: 0.8rem;
         text-align: center;
         line-height: 1.5rem;
@@ -59,7 +57,6 @@
     }
 
     &__scroll-message {
-        font-family: "PressStart";
         font-size: 0.8rem;
         height: 1rem;
         margin-top: 4rem;
@@ -67,8 +64,6 @@
     }
 
     &__text, &__button {
-        font-family: "PressStart";
-        text-transform: uppercase;
         font-size: 0.6rem;
     }
 
@@ -103,7 +98,6 @@
 
 // Mark of Naricain
     &__scroll-message-mon {
-        font-family: "PressStart";
         font-size: 0.8rem;
         height: 1rem;
         margin-top: 1rem;
@@ -128,6 +122,13 @@
         position: relative;
         left: -9rem;
         top: -37.8rem;
+    }
+
+    &__success {
+        position: relative;
+        left: -9rem;
+        top: -46.8rem;
+        width: 30rem;
     }
 
 // Containers

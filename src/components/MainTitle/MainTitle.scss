@@ -1,20 +1,35 @@
 @use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
 
 .main-title {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 360px;
+    margin: auto;
+    margin-top: 3rem;
 
     &__text {
         font-family: "Wildcrazy";
-        padding-top: 2rem;
-        opacity: 80%;
-        font-size: 5rem;
         color: white;
+        opacity: 80%;
+        font-size: 2rem;
+
+        @include tablet {
+            font-size: 4rem;
+        }
+
+        @include desktop {
+            font-size: 6rem;
+        }
     }
 
     &__logo {
-        width: 10rem;
-        padding-top: 2rem;
+        width: 5rem;
+
+        @include tablet {
+            width: 10rem;
+            padding-top: 2rem;
+        }
     }
 }

@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Images
-import elementPierce from '../../assets/Images/element-pierce.png';
+import elementPierce from '../../assets/Images/Items/element-pierce.png';
 import chaosScroll from '../../assets/Images/chaos-scroll.png';
 import whiteScroll from '../../assets/Images/white-scroll.png';
 import fail from '../../assets/Images/fail.gif';
+import success from '../../assets/Images/success.gif';
 
 function ElementPierce({ 
     passRateCount,
@@ -25,10 +26,16 @@ function ElementPierce({
     const navigate = useNavigate();
 
 // Renders success and fail animation
-    const failRender = () => {
+    const failAnimationRender = () => {
         setTimeout(() => setScrollStatus(false), 800);
         setTimeout(() => setAnimation(null), 800);
-        clearTimeout(failRender);
+        clearTimeout(failAnimationRender);
+    }
+
+    const successAnimationRender = () => {
+        setTimeout(() => setSuccessStatus(false), 1000);
+        setTimeout(() => setSuccessAnimation(null), 1000);
+        clearTimeout(successAnimationRender);
     }
         
 // Element Pierce random stats
@@ -49,8 +56,10 @@ function ElementPierce({
     const [weaponSlots, setWeaponSlots] = useState(7);
     const [useWhiteScroll, setUseWhiteScroll] = useState(false);
     const [scrollStatus, setScrollStatus] = useState(false);
+    const [successStatus, setSuccessStatus] = useState(false);
     const [scrollMessage, setScrollMessage] = useState("Drag Scroll over item to start.");
     const [animation, setAnimation] = useState();
+    const [successAnimation, setSuccessAnimation] = useState();
     const [dragStatus, setDragStatus] = useState(false);
         
 // Scrolling Logic
@@ -81,7 +90,7 @@ function ElementPierce({
             if(useWhiteScroll === true) {
                 setScrollStatus(true);
                 setAnimation(fail)
-                failRender();
+                failAnimationRender();
                 setScrollMessage(failWhiteScrollMessage)
                 setTotalScrollCount(totalScrollCount + 1)
             } else {
@@ -90,13 +99,16 @@ function ElementPierce({
                 setTotalScrollCount(totalScrollCount + 1)
                 setScrollStatus(true);
                 setAnimation(fail)
-                failRender();
+                failAnimationRender();
             }
         } else {
             setPassRateCount(passRateCount + 1)
             setScrollMessage(successMessage)
             setWeaponSlots(weaponSlots - 1)
             setTotalScrollCount(totalScrollCount + 1)
+            setSuccessStatus(true);
+            setSuccessAnimation(success);
+            successAnimationRender();
             if(itemStr > 0) {
                 setItemStr(itemStr + strChance)
             } if(itemDex > 0) {
@@ -200,6 +212,7 @@ function ElementPierce({
                 <div onClick={handleReset} className="chaos__button">Reset</div>
             </div>
             <img className={scrollStatus === true ? "chaos__animation-pierce" : "chaos__animation-hidden"} src={animation} alt="Scroll Fail Animation"/>
+            <img className={successStatus === true ? "chaos__success" : "chaos__animation-hidden"} src={successAnimation} alt="Scroll Fail Animation"/>
         </section>
     )
 }

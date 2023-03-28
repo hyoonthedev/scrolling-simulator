@@ -1,0 +1,18 @@
+@use "./variables" as *;
+
+// Media Type BreakPoints
+@mixin heroBreakPoint {
+    @media screen and (min-width: 500) {
+        @content;
+      }
+}
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+      }
+}
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}

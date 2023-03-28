@@ -14,6 +14,7 @@ import BrownWorkGlove from './pages/BrownWorkGlove/BrownWorkGlove';
 // Components
 import MainTitle from './components/MainTitle/MainTitle';
 import ScrollStats from './components/ScrollStats/ScrollStats';
+import Background from './components/Background/Background';
 
 function App() {
 
@@ -36,10 +37,10 @@ const destroyItemMessage = "The item is destroyed due to the overwhelming power 
 const noSlotsMessage = "No more available slots!";
 
   return (
-    <>
       <BrowserRouter>
         <MainTitle/>
-        <div className="main-container">
+        <Background/>
+        <div className="main__container">
           <Routes>
             <Route path="/" element={<LandingPage/>}/>
             <Route 
@@ -159,7 +160,6 @@ const noSlotsMessage = "No more available slots!";
         resetCount = {resetCount}
         />
       </BrowserRouter>
-    </>
   );
 }
 

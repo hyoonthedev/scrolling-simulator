@@ -8,6 +8,7 @@ import chaosScroll from '../../assets/Images/chaos-scroll.png';
 import whiteScroll from '../../assets/Images/white-scroll.png';
 import darkScroll from '../../assets/Images/scroll.png';
 import fail from '../../assets/Images/fail.gif';
+import success from '../../assets/Images/success.gif';
 
 function BrownWorkGlove({
     passRateCount,
@@ -26,10 +27,16 @@ function BrownWorkGlove({
     const navigate = useNavigate();
 
 // Renders success and fail animation
-    const failRender = () => {
+    const failAnimationRender = () => {
         setTimeout(() => setScrollStatus(false), 800);
         setTimeout(() => setAnimation(null), 800);
-        clearTimeout(failRender);
+        clearTimeout(failAnimationRender);
+    }
+
+    const successAnimationRender = () => {
+        setTimeout(() => setSuccessStatus(false), 1000);
+        setTimeout(() => setSuccessAnimation(null), 1000);
+        clearTimeout(successAnimationRender);
     }
         
 // Element Pierce states
@@ -37,8 +44,10 @@ function BrownWorkGlove({
     const [weaponSlots, setWeaponSlots] = useState(7);
     const [useWhiteScroll, setUseWhiteScroll] = useState(false);
     const [scrollStatus, setScrollStatus] = useState(false);
+    const [successStatus, setSuccessStatus] = useState(false);
     const [scrollMessage, setScrollMessage] = useState("Drag Scroll over item to start.");
     const [animation, setAnimation] = useState();
+    const [successAnimation, setSuccessAnimation] = useState();
     const [dragStatus, setDragStatus] = useState(false);
     const [darkScrollDragStatus, setDarkScrollDragStatus] = useState(false);
     const [itemDestroyed, setItemDestroyed] = useState(false);
@@ -66,7 +75,7 @@ function BrownWorkGlove({
             if(useWhiteScroll === true) {
                 setScrollStatus(true);
                 setAnimation(fail)
-                failRender();
+                failAnimationRender();
                 setScrollMessage(failWhiteScrollMessage)
                 setTotalScrollCount(totalScrollCount + 1)
             } else {
@@ -75,9 +84,12 @@ function BrownWorkGlove({
                 setTotalScrollCount(totalScrollCount + 1)
                 setScrollStatus(true);
                 setAnimation(fail)
-                failRender();
+                failAnimationRender();
             }
         } else {
+            setSuccessStatus(true);
+            setSuccessAnimation(success);
+            successAnimationRender();
             setPassRateCount(passRateCount + 1)
             setScrollMessage(successMessage)
             setWeaponSlots(weaponSlots - 1)
@@ -104,24 +116,27 @@ function BrownWorkGlove({
             if(destroyChance > 5) {
                 setScrollStatus(true);
                 setAnimation(fail)
-                failRender();
+                failAnimationRender();
                 setScrollMessage(destroyItemMessage)
                 setItemDestroyed(true)
             } else {
                 if(useWhiteScroll === true) {
                     setScrollStatus(true);
                     setAnimation(fail)
-                    failRender();
+                    failAnimationRender();
                     setScrollMessage(failWhiteScrollMessage)
                 } else {
                     setWeaponSlots(weaponSlots - 1)
                     setScrollMessage(failMessage)
                     setScrollStatus(true);
                     setAnimation(fail)
-                    failRender();
+                    failAnimationRender();
                 }
             }
         } if(scrollChance < 4) {
+            setSuccessStatus(true);
+            setSuccessAnimation(success);
+            successAnimationRender();
             setItemWeaponAttack(itemWeaponAttack + 3)
             setWeaponSlots(weaponSlots - 1)
             setScrollMessage(successMessage)
@@ -214,6 +229,7 @@ function BrownWorkGlove({
                 <div onClick={handleReset} className="chaos__button">Reset</div>
             </div>
             <img className={scrollStatus === true ? "chaos__animation-bwg" : "chaos__animation-hidden"} src={animation} alt="Scroll Fail Animation"/>
+            <img className={successStatus === true ? "chaos__success" : "chaos__animation-hidden"} src={successAnimation} alt="Scroll Fail Animation"/>
         </section>
     )
 }

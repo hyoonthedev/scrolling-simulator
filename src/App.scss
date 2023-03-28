@@ -7,21 +7,24 @@
 
 body {
     box-sizing: border-box;
-    background-image: url(./assets/Images/background.gif);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
     min-height: 140vh;
+    min-width: 360px;
+    font-family: "PressStart";
+    text-transform: uppercase;
 }
 
-.main-container {
-    background-color: white;
-    width: 40rem;
-    height: 40rem;
-    margin: auto;
-    opacity: 80%;
-    border-radius: 5rem;
-    margin-top: 2rem;
-    padding: 2rem;
-    max-width: 40rem;
+.main {
+
+    &__container {
+        background-color: white;
+        // width: 40rem;
+        height: 40rem;
+        margin: auto;
+        opacity: 80%;
+        border-radius: 5rem;
+        margin-top: 2rem;
+        padding: 2rem;
+        // max-width: 40rem;
+    }
+
 }

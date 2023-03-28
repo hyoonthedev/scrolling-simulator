@@ -3,7 +3,7 @@ import './LandingPage.scss';
 // Images
 import gaiaCape from '../../assets/Images/gaia-cape.png';
 import spectrumGoggle from '../../assets/Images/spectrum-goggle.png';
-import elementPierce from '../../assets/Images/element-pierce.png';
+import elementPierce from '../../assets/Images/Items/element-pierce.png';
 import bwg from '../../assets/Images/bwg.png';
 import faceStomper from '../../assets/Images/face-stomper.png';
 import markOfNaricain from '../../assets/Images/mark-of-naricain.png';
