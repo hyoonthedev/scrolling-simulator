@@ -1,6 +1,10 @@
 import './ScrollStats.scss';
 
-function ScrollStats({ passRateCount, totalScrollCount, resetCount }) {
+function ScrollStats({ 
+    passRateCount, 
+    totalScrollCount, 
+    resetCount 
+}) {
 
     return(
         <section className="stats__main">
