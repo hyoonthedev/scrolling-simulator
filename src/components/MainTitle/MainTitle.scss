@@ -29,7 +29,10 @@
 
         @include tablet {
             width: 10rem;
-            padding-top: 2rem;
+        }
+
+        @include desktop {
+            width: 15rem;
         }
     }
 }

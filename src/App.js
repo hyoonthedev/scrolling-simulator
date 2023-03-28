@@ -41,7 +41,7 @@ const noSlotsMessage = "No more available slots!";
         <MainTitle/>
         <Background/>
         <div className="main__container">
-          <Routes>
+          {/* <Routes>
             <Route path="/" element={<LandingPage/>}/>
             <Route 
               path="/facestomper" 
@@ -152,7 +152,7 @@ const noSlotsMessage = "No more available slots!";
                   destroyItemMessage = {destroyItemMessage}
                 />}
               />
-          </Routes>
+          </Routes> */}
         </div>
         <ScrollStats
         passRateCount = {passRateCount}
