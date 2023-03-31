@@ -1,0 +1,67 @@
+@use '../../styles/partials/variables' as *;
+
+.chaos-selection {
+
+    &__title {
+        font-family: "PressStart";
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+        opacity: 80%;
+    }
+
+    &__selected {
+        @extend .chaos-selection__title;
+        color: teal;
+        height: 2rem;
+        margin-top: 5rem;
+    }
+
+    &__start {
+        @extend .chaos-selection__title;
+        background-color: $button;
+        padding: 0.7rem 1rem;
+        width: 15rem;
+        margin: auto;
+        margin-top: 5rem;
+        border-radius: 1rem;
+
+        &:hover {
+            background-color: teal;
+            cursor: pointer;
+            color: white;
+           }
+    }
+
+    &__options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        height: 10rem;
+        gap: 3rem;
+        margin-top: 5rem;
+    }
+
+    &__image {
+        width: 5rem;
+
+        &:hover {
+            animation: item-float 2s linear infinite;
+            cursor: pointer;
+        }
+    }
+
+// Hidden if nothing is selected
+    &__hidden {
+        visibility: hidden;
+    }
+}
+
+@keyframes item-float {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(8px)}
+    100% {transform: translateY(0px);}
+}
+

@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 // Pages
 import LandingPage from './pages/LandingPage/LandingPage';
+import ChaosSelection from './pages/ChaosSelection/ChaosSelection';
 import Facestomper from './pages/Facestomper/Facestomper';
 import PinkGaiaCape from './pages/PinkGaiaCape/PinkGaiaCape';
 import ElementPierce from './pages/ElementPierce/ElementPierce';
@@ -41,6 +42,9 @@ const noSlotsMessage = "No more available slots!";
         <MainTitle/>
         <Background/>
         <div className="main__container">
+          <Routes>
+            <Route path="/" element={<LandingPage/>}/>
+          </Routes>
           {/* <Routes>
             <Route path="/" element={<LandingPage/>}/>
             <Route 

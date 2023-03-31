@@ -1,67 +1,77 @@
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
 
-.landing {
+.landing-page {
 
     &__title {
-        font-family: "PressStart";
-        text-transform: uppercase;
-        text-align: center;
-        margin-top: 3rem;
-        font-size: 1.5rem;
-        opacity: 80%;
-    }
-
-    &__selected {
-        @extend .landing__title;
         color: teal;
-        height: 2rem;
-        margin-top: 5rem;
-    }
+        text-align: center;
+        margin: 1rem 0 2rem;
+        font-size: 1.25rem;
 
-    &__start {
-        @extend .landing__title;
-        background-color: $button;
-        padding: 0.7rem 1rem;
-        width: 15rem;
-        margin: auto;
-        margin-top: 5rem;
-        border-radius: 1rem;
+        @include tablet {
+            font-size: 1.5rem;
+        }
 
-        &:hover {
-            background-color: teal;
-            cursor: pointer;
-            color: white;
-           }
-    }
-
-    &__options {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-        height: 10rem;
-        gap: 3rem;
-        margin-top: 5rem;
-    }
-
-    &__image {
-        width: 5rem;
-
-        &:hover {
-            animation: item-float 2s linear infinite;
-            cursor: pointer;
+        @include desktop {
+            font-size: 2rem;
+            margin: 1.5rem 0 3rem;
         }
     }
 
-// Hidden if nothing is selected
-    &__hidden {
-        visibility: hidden;
+    &__text {
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+        line-height: 1.25rem;
+
+        @include tablet {
+            font-size: 1rem;
+        }
+
+        @include desktop {
+            font-size: 1.25rem;
+            line-height: 1.6rem;
+        }
+    }
+
+    &__red-text {
+        color: red;
+    }
+
+    &__start {
+        font-size: 1.25rem;
+        margin: auto;
+        margin-top: 5rem;
+        background-color: $button;
+        max-width: 10rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        text-align: center;
+
+        @include tablet {
+            font-size: 2rem;
+        }
+
+        &:hover {
+            font-size: 2.5rem;
+            background-color: teal;
+            color: white;
+        }
+    }
+
+    &__list {
+        font-size: 0.7rem;
+        color: teal;
+        margin: 1rem 0 1rem;
+        line-height: 1.5rem;
+
+        @include tablet {
+            font-size: 1rem;
+        }
+
+        @include desktop {
+            font-size: 1.25rem;
+            line-height: 2rem;
+        }
     }
 }
-
-@keyframes item-float {
-    0% {transform: translateY(0px);}
-    50% {transform: translateY(8px)}
-    100% {transform: translateY(0px);}
-}
-
