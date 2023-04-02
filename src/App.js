@@ -12,6 +12,7 @@ import ElementPierce from './pages/ElementPierce/ElementPierce';
 import SpectrumGoggle from './pages/SpectrumGoggle/SpectrumGoggle';
 import MarkOfNaricain from './pages/MarkOfNaricain/MarkOfNaricain';
 import BrownWorkGlove from './pages/BrownWorkGlove/BrownWorkGlove';
+import Page404 from './pages/Page404/Page404';
 
 // Components
 import MainTitle from './components/MainTitle/MainTitle';
@@ -46,6 +47,7 @@ const noSlotsMessage = "No more available slots!";
           <Routes>
             <Route path="/" element={<LandingPage/>}/>
             <Route path="/mode" element={<ModeSelection/>}/>
+            <Route path="*" element={<Page404/>}/>
           </Routes>
           {/* <Routes>
             <Route path="/" element={<LandingPage/>}/>
