@@ -30,7 +30,7 @@ function ModeSelection() {
                 <img onClick={() => handleSelect("auf haven")} className="mode-select__image" src={aufHavenCirclet} alt="Auf Haven Circlet"/>
             </div>
             <p className={selected === null ? "mode-select__selected-hidden" : "mode-select__selected"}>{selected} Scrolling</p>
-            <div onClick={() => navigate(convertLink(selected))} className={selected === null ? "mode-select__button-hidden" : "mode-select__button"}>Go!</div>
+            <div onClick={() => navigate(`/${convertLink(selected)}`)} className={selected === null ? "mode-select__button-hidden" : "mode-select__button"}>Go!</div>
         </section>
     )
 }

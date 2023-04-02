@@ -47,11 +47,10 @@ const noSlotsMessage = "No more available slots!";
           <Routes>
             <Route path="/" element={<LandingPage/>}/>
             <Route path="/mode" element={<ModeSelection/>}/>
+            <Route path="/chaos" element={<ChaosSelection/>}/>
             <Route path="*" element={<Page404/>}/>
           </Routes>
-          {/* <Routes>
-            <Route path="/" element={<LandingPage/>}/>
-            <Route 
+            {/*<Route 
               path="/facestomper" 
               element={<Facestomper
                 passRateCount = {passRateCount}
