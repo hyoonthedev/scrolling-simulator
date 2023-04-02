@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Images
-import faceStompers from '../../assets/Images/face-stomper.png';
-import chaosScroll from '../../assets/Images/chaos-scroll.png';
-import whiteScroll from '../../assets/Images/white-scroll.png';
+import faceStompers from '../../assets/Images/Items/face-stomper.png';
+import chaosScroll from '../../assets/Images/Items/chaos-scroll.png';
+import whiteScroll from '../../assets/Images/Items/white-scroll.png';
 import fail from '../../assets/Images/fail.gif';
 
 function ChaosScrolling({ 

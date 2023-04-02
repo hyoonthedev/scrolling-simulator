@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 // Images
 import elementPierce from '../../assets/Images/Items/element-pierce.png';
-import chaosScroll from '../../assets/Images/chaos-scroll.png';
-import whiteScroll from '../../assets/Images/white-scroll.png';
+import chaosScroll from '../../assets/Images/Items/chaos-scroll.png';
+import whiteScroll from '../../assets/Images/Items/white-scroll.png';
 import fail from '../../assets/Images/fail.gif';
 import success from '../../assets/Images/success.gif';
 

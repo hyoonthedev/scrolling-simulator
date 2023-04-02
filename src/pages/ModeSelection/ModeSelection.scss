@@ -1,0 +1,110 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.mode-select {
+    
+    &__title {
+        color: teal;
+        text-align: center;
+        margin: 2rem 0 2rem;
+        font-size: 1.25rem;
+
+        @include tablet {
+            font-size: 1.5rem;
+        }
+
+        @include desktop {
+            font-size: 2.5rem;
+            margin: 2rem 0 3rem;
+        }
+    }
+
+    &__container {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+
+        @include tablet {
+            flex-direction: row;
+            margin-top: 10rem;
+        }
+
+        @include desktop {
+            gap: 8rem;
+        }
+    }
+
+    &__image {
+        width: 4rem;
+
+        @include tablet {
+            width: 6rem;
+        }
+
+        @include desktop {
+            width: 7rem;
+        }
+
+        &:hover {
+            animation: item-float 2s linear infinite;
+            cursor: pointer;
+        }
+    }
+
+    &__image-unavailable {
+        @extend .mode-select__image;
+        filter: grayscale(100%);
+    }
+
+    &__selected {
+        color: teal;
+        text-align: center;
+        margin-top: 3rem;
+
+        @include tablet {
+            margin-top: 7rem;
+        }
+
+        @include desktop {
+            font-size: 2rem;
+        }
+    }
+
+    &__selected-hidden {
+        visibility: hidden;
+    }
+
+    &__button {
+        font-size: 1.25rem;
+        margin: auto;
+        margin-top: 3rem;
+        background-color: teal;
+        max-width: 10rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        color: white;
+
+        @include tablet {
+            font-size: 2rem;
+        }
+
+        &:hover {
+            background-color: $button;
+            color: black;
+        }
+    }
+
+    &__button-hidden {
+        display: none;
+    }
+}
+
+@keyframes item-float {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(8px)}
+    100% {transform: translateY(0px);}
+}

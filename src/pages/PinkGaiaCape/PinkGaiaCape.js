@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Images
-import pinkGaiaCape from '../../assets/Images/gaia-cape.png';
-import chaosScroll from '../../assets/Images/chaos-scroll.png';
-import whiteScroll from '../../assets/Images/white-scroll.png';
+import pinkGaiaCape from '../../assets/Images/Items/gaia-cape.png';
+import chaosScroll from '../../assets/Images/Items/chaos-scroll.png';
+import whiteScroll from '../../assets/Images/Items/white-scroll.png';
 import fail from '../../assets/Images/fail.gif';
 
 function PinkGaiaCape({ 

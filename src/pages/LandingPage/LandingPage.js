@@ -1,6 +1,11 @@
 import './LandingPage.scss';
 
+import { useNavigate } from 'react-router-dom';
+
 function LandingPage() {
+
+    const navigate = useNavigate();
+
     return(
         <section className="landing-page">
             <h2 className="landing-page__title">Welcome to scrolls.im!</h2>
@@ -13,7 +18,7 @@ function LandingPage() {
             </ul>
             <p className="landing-page__text">Try this simulator before you <span className="landing-page__red-text">risk it all</span> on your items!</p>
             <p className="landing-page__text">Enjoy and have fun!</p>
-            <div className="landing-page__start">Start</div>
+            <div onClick={() => navigate('/mode')} className="landing-page__start">Start</div>
         </section>
     )
 }

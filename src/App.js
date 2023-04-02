@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 // Pages
 import LandingPage from './pages/LandingPage/LandingPage';
+import ModeSelection from './pages/ModeSelection/ModeSelection';
 import ChaosSelection from './pages/ChaosSelection/ChaosSelection';
 import Facestomper from './pages/Facestomper/Facestomper';
 import PinkGaiaCape from './pages/PinkGaiaCape/PinkGaiaCape';
@@ -44,6 +45,7 @@ const noSlotsMessage = "No more available slots!";
         <div className="main__container">
           <Routes>
             <Route path="/" element={<LandingPage/>}/>
+            <Route path="/mode" element={<ModeSelection/>}/>
           </Routes>
           {/* <Routes>
             <Route path="/" element={<LandingPage/>}/>
