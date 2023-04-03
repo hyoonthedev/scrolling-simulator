@@ -15,7 +15,7 @@ import success from '../../assets/Images/success.gif';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function AufHaven({ getRndInteger, successMessage, failMessage }) {
+function AufHaven({ getRndInteger, successMessage, failMessage, noSlotsMessage }) {
 
 // Renders success and fail animation
     const failAnimationRender = () => {
@@ -52,7 +52,12 @@ function AufHaven({ getRndInteger, successMessage, failMessage }) {
     const handleScroll = (scroll) => {
         const scrollChance = Math.floor(Math.random() * 11);
         const destroyChance = Math.floor(Math.random() * 11);
-
+        if(aufSlots === 0) {
+            return(
+                setScrollMessage(noSlotsMessage)
+            )
+        }
+        
         if(scroll === "dark-str") {
             if(scrollChance < 6) {
                 setAufStr(aufStr + 3);

@@ -174,6 +174,7 @@ const noSlotsMessage = "No more available slots!";
                   successMessage = {successMessage}
                   failMessage = {failMessage}
                   getRndInteger = {getRndInteger}
+                  noSlotsMessage = {noSlotsMessage}
                 />}
               />
           </Routes>
