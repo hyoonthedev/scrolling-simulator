@@ -280,7 +280,7 @@ function AufHaven({ getRndInteger, successMessage, failMessage }) {
                     <img 
                     onDragStart={handleDragStart}
                     onDragEnd={handleDragEnd}
-                    onDrag={handleDragging} id="white-str" className={dragStatus === "white-dex" ? "auf__hidden" : "auf__scroll"} src={whiteDex} alt="Auf Haven White Scroll for Dex"/>
+                    onDrag={handleDragging} id="white-dex" className={dragStatus === "white-dex" ? "auf__hidden" : "auf__scroll"} src={whiteDex} alt="Auf Haven White Scroll for Dex"/>
                     <img 
                     onDragStart={handleDragStart}
                     onDragEnd={handleDragEnd}
