@@ -13,6 +13,7 @@ import SpectrumGoggle from './pages/SpectrumGoggle/SpectrumGoggle';
 import MarkOfNaricain from './pages/MarkOfNaricain/MarkOfNaricain';
 import BrownWorkGlove from './pages/BrownWorkGlove/BrownWorkGlove';
 import GeneralScrolling from './pages/GeneralScrolling/GeneralScrolling';
+import AufHaven from './pages/AufHaven/AufHaven';
 import Page404 from './pages/Page404/Page404';
 
 // Components
@@ -166,6 +167,10 @@ const noSlotsMessage = "No more available slots!";
                   failMessage = {failMessage}
                   destroyItemMessage = {destroyItemMessage}
                 />}
+              />
+              <Route
+                path="/auf-haven"
+                element={<AufHaven/>}
               />
           </Routes>
         </div>
