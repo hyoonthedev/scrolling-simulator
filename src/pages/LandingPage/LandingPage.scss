@@ -74,4 +74,16 @@
             line-height: 2rem;
         }
     }
+
+    &__new {
+        color: red;
+        font-size: 0.6rem;
+        animation: blink 2s infinite;
+    }
+}
+
+@keyframes blink {
+    0% {opacity: 0;}
+    50% {opacity: 100%;}
+    100% {opacity: 0;}
 }
