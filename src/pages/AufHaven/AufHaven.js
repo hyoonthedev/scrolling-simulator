@@ -46,7 +46,6 @@ function AufHaven({ getRndInteger, successMessage, failMessage }) {
     const [aufDestroy, setAufDestroy] = useState(false);
 
     const [dragStatus, setDragStatus] = useState(null);
-    const [_currentDrag, setCurrentDrag] = useState(null);
 
 // Scrolling Logic
 
@@ -212,7 +211,6 @@ function AufHaven({ getRndInteger, successMessage, failMessage }) {
 // Handle Drag states
     const handleDragStart = (e) => {
         e.dataTransfer.effectAllowed = "copyMove";
-        setCurrentDrag(e.target.id)
     }
     const handleDragEnd = () => {
         setDragStatus(null)
