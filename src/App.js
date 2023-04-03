@@ -170,7 +170,11 @@ const noSlotsMessage = "No more available slots!";
               />
               <Route
                 path="/auf-haven"
-                element={<AufHaven/>}
+                element={<AufHaven
+                  successMessage = {successMessage}
+                  failMessage = {failMessage}
+                  getRndInteger = {getRndInteger}
+                />}
               />
           </Routes>
         </div>

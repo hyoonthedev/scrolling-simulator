@@ -5,6 +5,7 @@
     &__item {
         min-width: 5rem;
         width: 5rem;
+        max-width: 5rem;
         height: 5rem;
         animation: item-float 3s infinite;
     }
@@ -28,15 +29,83 @@
         justify-content: center;
         align-items: center;
         gap: 5rem;
+        height: 5rem;
     }
 
     &__message {
+        font-size: 0.5rem;
+        height: 2rem;
+        max-height: 2rem;
+        min-height: 2rem;
+        margin: 2rem 0 5rem;
+        color: $scroll-message;
         text-align: center;
+        line-height: 1.5rem;
+
+        @include tablet {
+            font-size: 0.7rem;
+        }
     }
 
     &__button-container {
-        margin: 4rem 0 1rem;
+        margin: 2rem 0 1rem;
         display: flex;
         justify-content: space-around;
     }
+
+    &__button {
+        background-color: $button;
+        padding: 0.5rem 1rem;
+        color: white;
+        font-size: 1rem;
+        margin: auto;
+        margin-top: 1rem;
+        border-radius: 1rem;
+        width: 5rem;
+        text-align: center;
+ 
+        &:hover {
+         background-color: teal;
+         cursor: pointer;
+        }
+    }
+
+    &__tip {
+        font-size: 0.4rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    &__tip-container {
+        margin-top: 2rem;
+    }
+
+    &__fail {
+        position: relative;
+        left: -6rem;
+        top: -42rem;
+
+        @include tablet {
+            left: -6.3rem;
+        }
+    }
+
+    &__success {
+        position: relative;
+        left: -6.3rem;
+        top: -49.8rem;
+        width: 30rem;
+        min-width: 30rem;
+    }
+
+    &__hidden {
+        display: none;
+    }
+
+    &__animation-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }

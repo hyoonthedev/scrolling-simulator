@@ -16,7 +16,7 @@ import './GeneralScrolling.scss';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function GeneralScrolling() {
+function GeneralScrolling({ successMessage, failMessage, destroyItemMessage }) {
 
     const navigate = useNavigate();
 
@@ -90,6 +90,7 @@ function GeneralScrolling() {
                 setBurnSuccessStatus(true);
                 setSuccessAnimation(success);
                 successAnimationRender("burn");
+                setScrollMessage(successMessage);
             } else {
                 setTotalFail(totalFail + 1);
                 setTotalUsed(totalUsed + 1);
@@ -97,6 +98,7 @@ function GeneralScrolling() {
                 setBurnFailStatus(true);
                 setAnimation(fail)
                 failAnimationRender("burn");
+                setScrollMessage(failMessage);
             }
         } if(chosenChance === "30") {
             if(scrollChance < 4) {
@@ -106,6 +108,7 @@ function GeneralScrolling() {
                 setBurnSuccessStatus(true);
                 setSuccessAnimation(success);
                 successAnimationRender("burn");
+                setScrollMessage(successMessage);
             } else {
                 if(destroyChance > 5) {
                     setTotalFail(totalFail + 1);
@@ -114,6 +117,7 @@ function GeneralScrolling() {
                     setBurnFailStatus(true);
                     setAnimation(fail)
                     failAnimationRender("burn");
+                    setScrollMessage(failMessage);
                 } else {
                     handleDestroyed("burn");
                     setTotalDestroy(totalDestroy + 1);
@@ -122,6 +126,7 @@ function GeneralScrolling() {
                     setBurnFailStatus(true);
                     setAnimation(fail)
                     failAnimationRender("burn");
+                    setScrollMessage(destroyItemMessage);
                 }
             }
         } if(chosenChance === "60") {
@@ -132,6 +137,7 @@ function GeneralScrolling() {
                 setBurnSuccessStatus(true);
                 setSuccessAnimation(success);
                 successAnimationRender("burn");
+                setScrollMessage(successMessage);
             } else {
                 setTotalFail(totalFail + 1);
                 setTotalUsed(totalUsed + 1);
@@ -139,6 +145,7 @@ function GeneralScrolling() {
                 setBurnFailStatus(true);
                 setAnimation(fail)
                 failAnimationRender("burn");
+                setScrollMessage(failMessage);
             }
         } if(chosenChance === "70") {
             if(scrollChance < 8) {
@@ -148,6 +155,7 @@ function GeneralScrolling() {
                 setBurnSuccessStatus(true);
                 setSuccessAnimation(success);
                 successAnimationRender("burn");
+                setScrollMessage(successMessage);
             } else {
                 if(destroyChance > 5) {
                     setTotalFail(totalFail + 1);
@@ -156,13 +164,16 @@ function GeneralScrolling() {
                     setBurnFailStatus(true);
                     setAnimation(fail)
                     failAnimationRender("burn");
+                    setScrollMessage(failMessage);
                 } else {
+                    handleDestroyed("burn");
                     setTotalDestroy(totalDestroy + 1);
                     setTotalUsed(totalUsed + 1);
                     setFailRow(failRow + 1);
                     setBurnFailStatus(true);
                     setAnimation(fail)
                     failAnimationRender("burn");
+                    setScrollMessage(destroyItemMessage);
                 }
             }
         }
@@ -179,11 +190,13 @@ function GeneralScrolling() {
                 setItemSuccessStatus(true);
                 setSuccessAnimation(success);
                 successAnimationRender("item");
+                setScrollMessage(successMessage);
             } else {
                 setTenTotal(tenTotal + 1)
                 setItemFailStatus(true);
                 setAnimation(fail)
                 failAnimationRender("item");
+                setScrollMessage(failMessage);
             }
         } if(chosenChance === "30") {
             if(scrollChance < 4) {
@@ -192,12 +205,14 @@ function GeneralScrolling() {
                 setItemSuccessStatus(true);
                 setSuccessAnimation(success);
                 successAnimationRender("item");
+                setScrollMessage(successMessage);
             } else {
                 if(destroyChance > 5) {
                     setthirtyTotal(thirtyTotal + 1);
                     setItemFailStatus(true);
                     setAnimation(fail)
                     failAnimationRender("item");
+                    setScrollMessage(failMessage);
                 } else {
                     setthirtyTotal(thirtyTotal + 1);
                     setItemDestroyedCount(itemDestroyedCount + 1);
@@ -205,6 +220,7 @@ function GeneralScrolling() {
                     setAnimation(fail)
                     failAnimationRender("item");
                     handleDestroyed("item")
+                    setScrollMessage(destroyItemMessage);
                 }
             }
         } if(chosenChance === "60") {
@@ -214,11 +230,13 @@ function GeneralScrolling() {
                 setItemSuccessStatus(true);
                 setSuccessAnimation(success);
                 successAnimationRender("item");
+                setScrollMessage(successMessage);
             } else {
                 setSixtyTotal(sixtyTotal + 1);
                 setItemFailStatus(true);
                 setAnimation(fail)
                 failAnimationRender("item");
+                setScrollMessage(failMessage);
             }
         } if(chosenChance === "70") {
             if(scrollChance < 8) {
@@ -227,12 +245,14 @@ function GeneralScrolling() {
                 setItemSuccessStatus(true);
                 setSuccessAnimation(success);
                 successAnimationRender("item");
+                setScrollMessage(successMessage);
             } else {
                 if(destroyChance > 5) {
                     setSeventyTotal(seventyTotal + 1);
                     setItemFailStatus(true);
                     setAnimation(fail)
                     failAnimationRender("item");
+                    setScrollMessage(failMessage);
                 } else {
                     setSeventyTotal(seventyTotal + 1);
                     setItemDestroyedCount(itemDestroyedCount + 1);
@@ -240,6 +260,7 @@ function GeneralScrolling() {
                     setAnimation(fail)
                     failAnimationRender("item");
                     handleDestroyed("item")
+                    setScrollMessage(destroyItemMessage);
                 }
             }
         }
@@ -323,7 +344,8 @@ function GeneralScrolling() {
                 </article>
             </div>
             <div className="general__item-container">
-                <img onDragOver={handleDragOver} 
+                <img 
+                    onDragOver={handleDragOver} 
                     onDrop={handleDropped}
                     className={burnDestroyed === true ? "general__item-hidden" : "general__item"} id="burn" src={burnItem} alt="Burn Item"/>
                 <article className="general__stats-container">
