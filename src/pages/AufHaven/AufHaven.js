@@ -46,7 +46,7 @@ function AufHaven({ getRndInteger, successMessage, failMessage }) {
     const [aufDestroy, setAufDestroy] = useState(false);
 
     const [dragStatus, setDragStatus] = useState(null);
-    const [currentDrag, setCurrentDrag] = useState(null);
+    const [_currentDrag, setCurrentDrag] = useState(null);
 
 // Scrolling Logic
 

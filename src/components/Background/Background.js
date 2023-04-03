@@ -4,7 +4,7 @@ import backgroundImage from '../../assets/Images/background.gif';
 
 function Background() {
     return(
-        <img className="background" src={backgroundImage}/>
+        <img className="background" src={backgroundImage} alt="Maplestory Background"/>
     )
 }
 
