@@ -208,11 +208,11 @@ function ElementPierce({
                     className={dragStatus === true ? "chaos__hidden" : "chaos__image"} src={chaosScroll} alt="Chaos Scroll"/>
             </div>
             <div className="chaos__button-container">
-                <div onClick={() => navigate('/')} className="chaos__button">Back</div>
+                <div onClick={() => navigate(-1)} className="chaos__button">Back</div>
                 <div onClick={handleReset} className="chaos__button">Reset</div>
             </div>
             <img className={scrollStatus === true ? "chaos__animation-pierce" : "chaos__animation-hidden"} src={animation} alt="Scroll Fail Animation"/>
-            <img className={successStatus === true ? "chaos__success" : "chaos__animation-hidden"} src={successAnimation} alt="Scroll Fail Animation"/>
+            <img className={successStatus === true ? "chaos__success-pierce" : "chaos__animation-hidden"} src={successAnimation} alt="Scroll Fail Animation"/>
         </section>
     )
 }

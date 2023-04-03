@@ -24,12 +24,12 @@
     }
 
     &__button {
-        margin-top: 5rem;
+        margin-top: 3rem;
         font-size: 1.25rem;
         margin: auto;
         margin-top: 5rem;
         background-color: teal;
-        max-width: 10rem;
+        max-width: 12rem;
         padding: 1rem;
         border-radius: 0.5rem;
         text-align: center;
@@ -41,7 +41,6 @@
 
         &:hover {
             background-color: $button;
-            color: black;
         }
     }
 }

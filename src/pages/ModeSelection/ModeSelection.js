@@ -25,9 +25,9 @@ function ModeSelection() {
         <section className="mode-select">
             <h2 className="mode-select__title">Select Sim Mode</h2>
             <div className="mode-select__container">
-                <img onClick={() => handleSelect("general")} className="mode-select__image" src={scroll} alt="30% Scroll"/>
-                <img onClick={() => handleSelect("chaos")} className="mode-select__image" src={chaosScroll} alt="Chaos Scroll"/>
-                <img onClick={() => handleSelect("auf haven")} className="mode-select__image" src={aufHavenCirclet} alt="Auf Haven Circlet"/>
+                <img onClick={() => handleSelect("general")} className={selected === "general" ? "mode-select__image" : "mode-select__image-grey"} src={scroll} alt="30% Scroll"/>
+                <img onClick={() => handleSelect("chaos")} className={selected === "chaos" ? "mode-select__image" : "mode-select__image-grey"} src={chaosScroll} alt="Chaos Scroll"/>
+                <img onClick={() => handleSelect("auf haven")} className={selected === "auf haven" ? "mode-select__image" : "mode-select__image-grey"} src={aufHavenCirclet} alt="Auf Haven Circlet"/>
             </div>
             <p className={selected === null ? "mode-select__selected-hidden" : "mode-select__selected"}>{selected} Scrolling</p>
             <div onClick={() => navigate(`/${convertLink(selected)}`)} className={selected === null ? "mode-select__button-hidden" : "mode-select__button"}>Go!</div>

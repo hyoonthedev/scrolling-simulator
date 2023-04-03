@@ -1,4 +1,5 @@
 @use "../styles/partials/variables" as *;
+@use "../styles/partials/mixins" as *;
 
 .chaos {
 
@@ -31,8 +32,33 @@
 
     &__animation {
         position: relative;
-        left: -9rem;
+        left: -6.8rem;
         top: -38rem;
+
+        @include tablet {
+            left: -8.3rem;
+            top: -38rem;
+        }
+
+        @include desktop {
+            left: -12.5rem;
+        }
+    }
+
+    &__success {
+        position: relative;
+        left: -6.8rem;
+        top: -46.8rem;
+        width: 30rem;
+
+        @include tablet {
+            left: -8.3rem;
+            top: -46.3rem;
+        }
+
+        @include desktop {
+            left: -12.5rem;
+        }
     }
 
     &__animation-hidden {
@@ -45,11 +71,15 @@
     }
 
     &__stats {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         text-align: center;
-        line-height: 1.5rem;
+        line-height: 1rem;
         color: black;
         opacity: 70%;
+
+        @include desktop {
+            font-size: 0.8rem;
+        }
     }
 
     &__stats-hidden {
@@ -57,10 +87,15 @@
     }
 
     &__scroll-message {
-        font-size: 0.8rem;
+        font-size: 0.5rem;
         height: 1rem;
         margin-top: 4rem;
         color: $scroll-message;
+        line-height: 1.5rem;
+
+        @include tablet {
+            font-size: 0.7rem;
+        }
     }
 
     &__text, &__button {
@@ -85,15 +120,69 @@
 // Element Pierce
     &__animation-pierce {
         position: relative;
-        left: -9rem;
-        top: -43rem;
+        left: -7rem;
+        top: -42.5rem;
+
+        @include tablet {
+            left: -8.4rem;
+            top: -42rem;
+        }
+
+        @include desktop {
+            left: -12.5rem;
+            top: -41rem;
+        }
+    }
+
+    &__success-pierce {
+        position: relative;
+        left: -7rem;
+        top: -51rem;
+        width: 30rem;
+
+        @include tablet {
+            left: -8.2rem;
+            top: -50.8rem;
+        }
+
+        @include desktop {
+            left: -12.5rem;
+            top: -49.5rem;
+        }
     }
 
 // Spectrum Goggle
     &__animation-spectrum {
         position: relative;
-        left: -11.5rem;
+        left: -6.7rem;
         top: -39.5rem;
+
+        @include tablet {
+            left: -8.3rem;
+            top: -39rem;
+        }
+
+        @include desktop {
+            left: -12.5rem;
+            top: -37.7rem;
+        }
+    }
+
+    &__success-spectrum {
+        position: relative;
+        left: -7rem;
+        top: -47.8rem;
+        width: 30rem;
+
+        @include tablet {
+            left: -8.3rem;
+            top: -47.8rem;
+        }
+
+        @include desktop {
+            left: -12.5rem;
+            top: -46.7rem;
+        }
     }
 
 // Mark of Naricain
@@ -112,23 +201,43 @@
     }
 
     &__animation-mon {
-        position: relative;
-        left: -9.4rem;
-        top: -43rem;
+        @extend .chaos__animation-spectrum;
+    }
+
+    &__success-mon {
+        @extend .chaos__success-spectrum;
     }
 
 // Brown Work Glove
     &__animation-bwg {
         position: relative;
-        left: -9rem;
-        top: -37.8rem;
+        left: -6.8rem;
+        top: -37.3rem;
+
+        @include tablet {
+            left: -8rem;
+        }
+
+        @include desktop {
+            left: -12.5rem;
+            top: -37.5rem;
+        }
     }
 
-    &__success {
+    &__success-bwg {
         position: relative;
-        left: -9rem;
+        left: -6.8rem;
         top: -46.8rem;
         width: 30rem;
+
+        @include tablet {
+            left: -8.3rem;
+            top: -46.3rem;
+        }
+
+        @include desktop {
+            left: -12.5rem;
+        }
     }
 
 // Containers
@@ -136,8 +245,12 @@
         flex-basis: 100%;
         display: flex;
         justify-content: center;
-        gap: 5rem;
+        gap: 2rem;
         margin: 1rem 0 2rem;
+
+        @include tablet {
+            gap: 5rem;
+        }
     }
 
     &__scroll-container {
@@ -167,6 +280,15 @@
         justify-content: center;
         align-items: center;
         gap: 5rem;
+    }
+
+    &__stats-container {
+        margin-top: 1.5rem;
+        width: 11.5rem;
+
+        @include desktop {
+            width: 20rem;
+        }
     }
 
     &__stats-container-hidden {

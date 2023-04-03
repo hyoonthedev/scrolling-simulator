@@ -4,7 +4,7 @@
 .mode-select {
     
     &__title {
-        color: teal;
+        color: $primary-teal;
         text-align: center;
         margin: 2rem 0 2rem;
         font-size: 1.25rem;
@@ -39,6 +39,7 @@
 
     &__image {
         width: 4rem;
+        animation: item-float 2.5s linear infinite;
 
         @include tablet {
             width: 6rem;
@@ -49,9 +50,14 @@
         }
 
         &:hover {
-            animation: item-float 2s linear infinite;
             cursor: pointer;
         }
+    }
+
+    &__image-grey {
+        @extend .mode-select__image;
+        animation: none;
+        filter: grayscale(100%)
     }
 
     &__image-unavailable {
@@ -60,7 +66,7 @@
     }
 
     &__selected {
-        color: teal;
+        color: $primary-teal;
         text-align: center;
         margin-top: 3rem;
 
@@ -81,7 +87,7 @@
         font-size: 1.25rem;
         margin: auto;
         margin-top: 3rem;
-        background-color: teal;
+        background-color: $primary-teal;
         max-width: 10rem;
         padding: 1rem;
         border-radius: 0.5rem;
@@ -94,7 +100,6 @@
 
         &:hover {
             background-color: $button;
-            color: black;
         }
     }
 
@@ -105,6 +110,6 @@
 
 @keyframes item-float {
     0% {transform: translateY(0px);}
-    50% {transform: translateY(8px)}
+    50% {transform: translateY(10px)}
     100% {transform: translateY(0px);}
 }

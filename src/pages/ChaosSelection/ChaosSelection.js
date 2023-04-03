@@ -31,15 +31,18 @@ function LandingPage() {
         <section className="chaos-selection">
             <h4 className="chaos-selection__title">Select Item to Scroll!</h4>
             <div className="chaos-selection__options">
-                <img onClick={() => handleClick("pink gaia cape")} className="chaos-selection__image" src={gaiaCape} alt="Pink Gaia Cape"/>
-                <img onClick={() => handleClick("spectrum goggle")} className="chaos-selection__image" src={spectrumGoggle} alt="Spectrum Goggle"/>
-                <img onClick={() => handleClick("element pierce")} className="chaos-selection__image" src={elementPierce} alt="Element Pierece"/>
-                <img onClick={() => handleClick("brown work glove")} className="chaos-selection__image" src={bwg} alt="Brown Work Glove"/>
-                <img onClick={() => handleClick("facestomper")} className="chaos-selection__image" src={faceStomper} alt="Face Stomper"/>
-                <img onClick={() => handleClick("mark of naricain")} className="chaos-selection__image" src={markOfNaricain} alt="Mark of Naricain"/>
+                <img onClick={() => handleClick("pink gaia cape")} className={selected === "pink gaia cape" ? "chaos-selection__image" : "chaos-selection__image-grey"} src={gaiaCape} alt="Pink Gaia Cape"/>
+                <img onClick={() => handleClick("spectrum goggle")} className={selected === "spectrum goggle" ? "chaos-selection__image" : "chaos-selection__image-grey"} src={spectrumGoggle} alt="Spectrum Goggle"/>
+                <img onClick={() => handleClick("element pierce")} className={selected === "element pierce" ? "chaos-selection__image" : "chaos-selection__image-grey"} src={elementPierce} alt="Element Pierece"/>
+                <img onClick={() => handleClick("brown work glove")} className={selected === "brown work glove" ? "chaos-selection__image" : "chaos-selection__image-grey"} src={bwg} alt="Brown Work Glove"/>
+                <img onClick={() => handleClick("facestomper")} className={selected === "facestomper" ? "chaos-selection__image" : "chaos-selection__image-grey"} src={faceStomper} alt="Face Stomper"/>
+                <img onClick={() => handleClick("mark of naricain")} className={selected === "mark of naricain" ? "chaos-selection__image" : "chaos-selection__image-grey"} src={markOfNaricain} alt="Mark of Naricain"/>
             </div>
             <h4 className={selected === "unavailable" ? "chaos-selection__selected-unavailable" : "chaos-selection__selected"} >{selected}</h4>
-            <div onClick={() => navigate(`/${selectedLink}`)} className={selected === null ? "chaos-selection__hidden" : "chaos-selection__start" }>Lets go!</div>
+            <div className="chaos-selection__button-contain">
+                <div onClick={() => navigate("/mode")} className="chaos-selection__button">Mode Select</div>
+                <div onClick={() => navigate(`/${selectedLink}`)} className={selected === null ? "chaos-selection__hidden" : "chaos-selection__button"}>Lets go!</div>
+            </div>
         </section>
     )
 }

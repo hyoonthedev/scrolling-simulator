@@ -4,33 +4,52 @@
 .chaos-selection {
 
     &__title {
+        color: $secondary-teal;
         text-align: center;
         margin-top: 3rem;
         font-size: 1.5rem;
         opacity: 80%;
+
+        @include tablet {
+            font-size: 1.5rem;
+        }
+
+        @include desktop {
+            font-size: 2rem;
+            margin: 2rem 0 3rem;
+        }
     }
 
     &__selected {
         @extend .chaos-selection__title;
-        color: teal;
+        color: $primary-teal;
         height: 2rem;
         margin-top: 5rem;
     }
 
-    &__start {
+    &__button-contain {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__button {
         @extend .chaos-selection__title;
-        background-color: $button;
+        background-color: $secondary-teal;
         padding: 0.7rem 1rem;
-        width: 15rem;
+        width: 10rem;
         margin: auto;
         margin-top: 5rem;
         border-radius: 1rem;
+        color: white;
 
         &:hover {
-            background-color: teal;
+            background-color: $button;
             cursor: pointer;
-            color: white;
            }
+
+        @include desktop {
+            width: 15rem;
+        }
     }
 
     &__options {
@@ -46,6 +65,7 @@
 
     &__image {
         width: 3rem;
+        animation: item-float 2s linear infinite;
 
         @include tablet {
             width: 4rem;
@@ -56,14 +76,19 @@
         }
 
         &:hover {
-            animation: item-float 2s linear infinite;
             cursor: pointer;
         }
     }
 
+    &__image-grey {
+        @extend .chaos-selection__image;
+        animation: none;
+        filter: grayscale(100%);
+    }
+
 // Hidden if nothing is selected
     &__hidden {
-        visibility: hidden;
+        display: none;
     }
 }
 

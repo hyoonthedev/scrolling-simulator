@@ -49,8 +49,7 @@ const noSlotsMessage = "No more available slots!";
             <Route path="/mode" element={<ModeSelection/>}/>
             <Route path="/chaos" element={<ChaosSelection/>}/>
             <Route path="*" element={<Page404/>}/>
-          </Routes>
-            {/*<Route 
+            <Route 
               path="/facestomper" 
               element={<Facestomper
                 passRateCount = {passRateCount}
@@ -87,6 +86,24 @@ const noSlotsMessage = "No more available slots!";
                 />}
             />
             <Route
+              path="/spectrum-goggle"
+              element={<SpectrumGoggle
+                passRateCount = {passRateCount}
+                setPassRateCount = {setPassRateCount}
+                failRateCount = {failRateCount}
+                setFailRateCount = {setFailRateCount}
+                totalScrollCount = {totalScrollCount}
+                setTotalScrollCount = {setTotalScrollCount}
+                resetCount = {resetCount}
+                setResetCount = {setResetCount}
+                getRndInteger = {getRndInteger}
+                successMessage = {successMessage}
+                failMessage = {failMessage}
+                failWhiteScrollMessage = {failWhiteScrollMessage}
+                noSlotsMessage = {noSlotsMessage}
+              />}
+            />
+            <Route
               path="/element-pierce"
               element={<ElementPierce
                 passRateCount = {passRateCount}
@@ -105,42 +122,6 @@ const noSlotsMessage = "No more available slots!";
               />}
             />
             <Route
-              path="/spectrum-goggle"
-              element={<SpectrumGoggle
-                passRateCount = {passRateCount}
-                setPassRateCount = {setPassRateCount}
-                failRateCount = {failRateCount}
-                setFailRateCount = {setFailRateCount}
-                totalScrollCount = {totalScrollCount}
-                setTotalScrollCount = {setTotalScrollCount}
-                resetCount = {resetCount}
-                setResetCount = {setResetCount}
-                getRndInteger = {getRndInteger}
-                successMessage = {successMessage}
-                failMessage = {failMessage}
-                failWhiteScrollMessage = {failWhiteScrollMessage}
-                noSlotsMessage = {noSlotsMessage}
-              />}
-            />
-              <Route
-                path="/mark-of-naricain"
-                element={<MarkOfNaricain
-                  passRateCount = {passRateCount}
-                  setPassRateCount = {setPassRateCount}
-                  failRateCount = {failRateCount}
-                  setFailRateCount = {setFailRateCount}
-                  totalScrollCount = {totalScrollCount}
-                  setTotalScrollCount = {setTotalScrollCount}
-                  resetCount = {resetCount}
-                  setResetCount = {setResetCount}
-                  getRndInteger = {getRndInteger}
-                  successMessage = {successMessage}
-                  failMessage = {failMessage}
-                  failWhiteScrollMessage = {failWhiteScrollMessage}
-                  noSlotsMessage = {noSlotsMessage}
-                />}
-              />
-              <Route
                 path="/brown-work-glove"
                 element={<BrownWorkGlove
                   passRateCount = {passRateCount}
@@ -159,7 +140,25 @@ const noSlotsMessage = "No more available slots!";
                   destroyItemMessage = {destroyItemMessage}
                 />}
               />
-          </Routes> */}
+              <Route
+                path="/mark-of-naricain"
+                element={<MarkOfNaricain
+                  passRateCount = {passRateCount}
+                  setPassRateCount = {setPassRateCount}
+                  failRateCount = {failRateCount}
+                  setFailRateCount = {setFailRateCount}
+                  totalScrollCount = {totalScrollCount}
+                  setTotalScrollCount = {setTotalScrollCount}
+                  resetCount = {resetCount}
+                  setResetCount = {setResetCount}
+                  getRndInteger = {getRndInteger}
+                  successMessage = {successMessage}
+                  failMessage = {failMessage}
+                  failWhiteScrollMessage = {failWhiteScrollMessage}
+                  noSlotsMessage = {noSlotsMessage}
+                />}
+              />
+          </Routes>
         </div>
         <ScrollStats
         passRateCount = {passRateCount}
