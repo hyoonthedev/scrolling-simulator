@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import brownWorkGlove from '../../assets/Images/Items/bwg.png';
 import chaosScroll from '../../assets/Images/Items/chaos-scroll.png';
 import whiteScroll from '../../assets/Images/Items/white-scroll.png';
-import darkScroll from '../../assets/Images/Items/scroll.png';
+import darkScroll from '../../assets/Images/Items/scroll-thirty.png';
 import fail from '../../assets/Images/fail.gif';
 import success from '../../assets/Images/success.gif';
 
@@ -201,7 +201,7 @@ function BrownWorkGlove({
             <div className="chaos__scroll-message">{scrollMessage}</div>
             <div className="chaos__scroll-container">
                 <div className="chaos__whitescroll-container">
-                    <img className="chaos__image" src={whiteScroll} alt="White Scroll"/>
+                    <img className={useWhiteScroll === false ? "chaos__image-grey" : "chaos__image"} src={whiteScroll} alt="White Scroll"/>
                     <div className="chaos__checkbox">
                         <input 
                             type="checkbox"

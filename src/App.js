@@ -12,6 +12,7 @@ import ElementPierce from './pages/ElementPierce/ElementPierce';
 import SpectrumGoggle from './pages/SpectrumGoggle/SpectrumGoggle';
 import MarkOfNaricain from './pages/MarkOfNaricain/MarkOfNaricain';
 import BrownWorkGlove from './pages/BrownWorkGlove/BrownWorkGlove';
+import GeneralScrolling from './pages/GeneralScrolling/GeneralScrolling';
 import Page404 from './pages/Page404/Page404';
 
 // Components
@@ -156,6 +157,14 @@ const noSlotsMessage = "No more available slots!";
                   failMessage = {failMessage}
                   failWhiteScrollMessage = {failWhiteScrollMessage}
                   noSlotsMessage = {noSlotsMessage}
+                />}
+              />
+              <Route 
+                path="/general"
+                element={<GeneralScrolling
+                  successMessage = {successMessage}
+                  failMessage = {failMessage}
+                  destroyItemMessage = {destroyItemMessage}
                 />}
               />
           </Routes>

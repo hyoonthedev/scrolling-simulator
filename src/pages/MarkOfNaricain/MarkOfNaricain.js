@@ -236,7 +236,7 @@ function MarkOfNaricain({
             <div className="chaos__scroll-message-mon">{scrollMessage}</div>
             <div className="chaos__scroll-container-mon">
                 <div className="chaos__whitescroll-container">
-                    <img className="chaos__image" src={whiteScroll} alt="White Scroll"/>
+                    <img className={useWhiteScroll === false ? "chaos__image-grey" : "chaos__image"} src={whiteScroll} alt="White Scroll"/>
                     <div className="chaos__checkbox">
                         <input 
                             type="checkbox"

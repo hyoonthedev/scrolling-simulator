@@ -1,0 +1,194 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.general {
+
+    &__item {
+        min-width: 5rem;
+        width: 5rem;
+        height: 5rem;
+        animation: item-float 3s infinite;
+    }
+
+    &__item-hidden {
+        width: 5rem;
+        min-width: 5rem;
+        height: 5rem;
+        visibility: hidden;
+    }
+
+    &__scroll {
+        min-width: 3.5rem;
+    }
+
+    &__scroll-drag {
+        min-width: 3.5rem;
+        display: none;
+    }
+
+    &__scroll-container {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 3rem 0 1rem;;
+    }
+
+    &__item-container {
+        min-width: 20rem;
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        margin: auto;
+        margin: 2rem 0 3rem;
+    }
+
+    &__stats {
+        font-size: 0.6rem;
+        margin-bottom: 0.2rem;
+
+        @include tablet {
+            font-size: 0.8rem;
+        }
+    }
+
+    &__stats-green {
+        @extend .general__stats;
+        color: green;
+    }
+
+    &__stats-container {
+        min-width: 14rem;
+    }
+
+    &__tip {
+        font-size: 0.3rem;
+        text-align: center;
+        margin-bottom: 4rem;
+
+        @include tablet {
+            font-size: 0.5rem;
+        }
+    }
+
+    &__scroll-message {
+        font-size: 0.4rem;
+        height: 1rem;
+        margin-top: 4rem;
+        color: $scroll-message;
+        text-align: center;
+        line-height: 1.5rem;
+
+        @include tablet {
+            font-size: 0.7rem;
+        }
+    }
+
+    &__button {
+        background-color: $button;
+        padding: 0.5rem 1rem;
+        color: white;
+        font-size: 1rem;
+        margin: auto;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        width: 5rem;
+        text-align: center;
+ 
+        &:hover {
+         background-color: teal;
+         cursor: pointer;
+        }
+     }
+
+     &__button-alert {
+        background-color: $button;
+        padding: 0.5rem 1rem;
+        color: white;
+        font-size: 1rem;
+        margin: auto;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        width: 5rem;
+        text-align: center;
+        animation: button-alert 2s infinite;
+
+        &:hover {
+            cursor: pointer;
+        }
+     }
+
+     &__button-container {
+        display: flex;
+     }
+
+     &__animation-burn {
+        min-width: 12rem;
+        width: 12rem;
+        position: relative;
+        left: -8.5rem;
+        top: -29.5rem;
+    }
+
+    &__animation-item {
+        min-width: 12rem;
+        width: 12rem;
+        position: relative;
+        left: -8.8rem;
+        top: -36.8rem;
+
+        @include tablet {
+            top: -37.4rem;
+        }
+    }
+
+    &__success-burn {
+        min-width: 30rem;
+        width: 30rem;
+        position: relative;
+        left: -8.3rem;
+        top: -37.6rem;
+
+        @include tablet {
+            left: -8.7rem;
+            top: -38rem;
+        }
+
+    }
+
+    &__success-item {
+        min-width: 30rem;
+        width: 30rem;
+        position: relative;
+        left: -8.8rem;
+        top: -45.6rem;
+
+        @include tablet {
+            top: -46rem;
+        }
+    }
+
+    &__animation-hidden {
+        display: none;
+    }
+
+    &__animation-container {
+        flex-basis: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+}
+
+@keyframes item-float {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(8px)}
+    100% {transform: translateY(0px);}
+}
+
+@keyframes button-alert {
+    0% {background-color: $button;}
+    50% {background-color: teal;}
+    100% {background-color: $button;}
+}

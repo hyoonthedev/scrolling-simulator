@@ -1,6 +1,6 @@
 import './ModeSelection.scss';
 
-import scroll from '../../assets/Images/Items/scroll.png';
+import scroll from '../../assets/Images/Items/scroll-thirty.png';
 import chaosScroll from '../../assets/Images/Items/chaos-scroll.png';
 import aufHavenCirclet from '../../assets/Images/Items/auf-haven-circlet.png';
 

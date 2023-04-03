@@ -21,6 +21,11 @@
         margin-top: 1rem;
     }
 
+    &__image-grey {
+        @extend .chaos__image;
+        filter: grayscale(100%);
+    }
+
     &__item-hidden {
         display: none;
     }
@@ -257,7 +262,7 @@
         display: flex;
         justify-content: center;
         margin-top: 7rem;
-        gap: 5rem;
+        gap: 3rem;
     }
 
     &__checkbox {

@@ -26,17 +26,17 @@ function ChaosScrolling({
     const navigate = useNavigate();
 
 /// Renders success and fail animation
-const failAnimationRender = () => {
-    setTimeout(() => setScrollStatus(false), 800);
-    setTimeout(() => setAnimation(null), 800);
-    clearTimeout(failAnimationRender);
-}
+    const failAnimationRender = () => {
+        setTimeout(() => setScrollStatus(false), 800);
+        setTimeout(() => setAnimation(null), 800);
+        clearTimeout(failAnimationRender);
+    }
 
-const successAnimationRender = () => {
-    setTimeout(() => setSuccessStatus(false), 1000);
-    setTimeout(() => setSuccessAnimation(null), 1000);
-    clearTimeout(successAnimationRender);
-}
+    const successAnimationRender = () => {
+        setTimeout(() => setSuccessStatus(false), 1000);
+        setTimeout(() => setSuccessAnimation(null), 1000);
+        clearTimeout(successAnimationRender);
+    }
 
 // Facestomper random stats
     const attackStat = getRndInteger(1, 3);
@@ -165,7 +165,7 @@ const successAnimationRender = () => {
             <div className="chaos__scroll-message">{scrollMessage}</div>
             <div className="chaos__scroll-container">
                 <div className="chaos__whitescroll-container">
-                    <img className="chaos__image" src={whiteScroll} alt="White Scroll"/>
+                    <img className={useWhiteScroll === false ? "chaos__image-grey" : "chaos__image"} src={whiteScroll} alt="White Scroll"/>
                     <div className="chaos__checkbox">
                         <input 
                             type="checkbox"
