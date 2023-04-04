@@ -39,6 +39,7 @@
         position: relative;
         left: -6.8rem;
         top: -38rem;
+        z-index: 1;
 
         @include tablet {
             left: -8.3rem;
@@ -55,6 +56,7 @@
         left: -6.8rem;
         top: -46.8rem;
         width: 30rem;
+        z-index: 1;
 
         @include tablet {
             left: -8.3rem;
@@ -124,6 +126,7 @@
 // Unique positioning
 // Element Pierce
     &__animation-pierce {
+        z-index: 1;
         position: relative;
         left: -7rem;
         top: -42.5rem;
@@ -140,6 +143,7 @@
     }
 
     &__success-pierce {
+        z-index: 1;
         position: relative;
         left: -7rem;
         top: -51rem;
@@ -158,6 +162,7 @@
 
 // Spectrum Goggle
     &__animation-spectrum {
+        z-index: 1;
         position: relative;
         left: -6.7rem;
         top: -39.5rem;
@@ -174,6 +179,7 @@
     }
 
     &__success-spectrum {
+        z-index: 1;
         position: relative;
         left: -7rem;
         top: -47.8rem;
@@ -215,6 +221,7 @@
 
 // Brown Work Glove
     &__animation-bwg {
+        z-index: 1;
         position: relative;
         left: -6.8rem;
         top: -37.3rem;
@@ -230,6 +237,7 @@
     }
 
     &__success-bwg {
+        z-index: 1;
         position: relative;
         left: -6.8rem;
         top: -46.8rem;

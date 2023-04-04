@@ -124,6 +124,7 @@
      }
 
      &__animation-burn {
+        z-index: 1;
         min-width: 12rem;
         width: 12rem;
         position: relative;
@@ -132,6 +133,7 @@
     }
 
     &__animation-item {
+        z-index: 1;
         min-width: 12rem;
         width: 12rem;
         position: relative;
@@ -144,6 +146,7 @@
     }
 
     &__success-burn {
+        z-index: 1;
         min-width: 30rem;
         width: 30rem;
         position: relative;
@@ -158,6 +161,7 @@
     }
 
     &__success-item {
+        z-index: 1;
         min-width: 30rem;
         width: 30rem;
         position: relative;

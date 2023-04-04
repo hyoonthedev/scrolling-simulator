@@ -81,6 +81,7 @@
     }
 
     &__fail {
+        z-index: 1;
         position: relative;
         left: -6rem;
         top: -42rem;
@@ -91,6 +92,7 @@
     }
 
     &__success {
+        z-index: 1;
         position: relative;
         left: -6.3rem;
         top: -49.8rem;
